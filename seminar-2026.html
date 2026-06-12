@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MBBS Abroad Seminar 2026 — Tamil Nadu's Biggest Seminar by FMGE Doctors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:        #0F1419;
+    --ink-soft:   #525661;
+    --surface:    #F8FAFB;
+    --white:      #FFFFFF;
+    --accent:     #00A651;       /* vibrant emerald green */
+    --accent-lt:  #E8F9F0;
+    --accent-dark: #008040;
+    --secondary:  #6B63D3;       /* purple accent */
+    --secondary-lt: #F3F0FF;
+    --border:     #E5E7EB;
+    --tag-bg:     #111827;
+    --hero-bg:    #0F1419;
+    --success:    #10B981;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: var(--accent);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 9px 0;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .ticker-track {
+    display: inline-block;
+    animation: ticker 28s linear infinite;
+  }
+  .ticker-track span { margin-right: 60px; }
+  @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(248,250,251,0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: color 0.2s ease;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .nav-cta:hover { 
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,166,81,0.25);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--hero-bg);
+    color: #fff;
+    padding: 70px 5% 80px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -180px; right: -100px;
+    width: 620px; height: 620px;
+    background: radial-gradient(circle, rgba(0,166,81,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -80px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(107,99,211,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(0,166,81,0.3);
+    border-radius: 100px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5ce65c;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #5ce65c;
+    box-shadow: 0 0 10px #5ce65c;
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+  .hero h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1.8px;
+    max-width: 900px;
+    margin: 0 auto 18px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: #5ce65c;
+    display: block;
+    font-weight: 800;
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.70);
+    max-width: 620px;
+    line-height: 1.8;
+    margin: 0 auto 32px;
+  }
+  .hero-actions { 
+    display: flex; gap: 16px; flex-wrap: wrap; 
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+    box-shadow: 0 8px 24px rgba(0,166,81,0.3);
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { 
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(0,166,81,0.4);
+    background: var(--accent-dark);
+  }
+  .btn-ghost {
+    border: 2px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.9);
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .btn-ghost:hover { 
+    border-color: rgba(255,255,255,0.6); 
+    background: rgba(255,255,255,0.08);
+    color: #fff; 
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-item .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .stat-item .num span { color: #5ce65c; }
+  .stat-item .label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.52);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+
+  /* ── CITY STRIP ── */
+  .city-strip {
+    background: linear-gradient(135deg, #00A651 0%, #008040 100%);
+    padding: 16px 5%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .city-strip-inner {
+    display: inline-block;
+    animation: ticker 30s linear infinite;
+  }
+  .city-strip-inner span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-right: 48px;
+  }
+  .city-strip-inner span::before {
+    content: '✓  ';
+    opacity: 0.8;
+    font-size: 11px;
+    margin-right: 8px;
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 60px 5%; }
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.9px;
+    line-height: 1.22;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    color: var(--ink-soft);
+    font-size: 16px;
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.75;
+  }
+
+  /* ── SCHEDULE ── */
+  .schedule-section { 
+    background: var(--white);
+    text-align: center;
+  }
+  .schedule-header { 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px; 
+    margin-bottom: 40px;
+  }
+  .schedule-header > div {
+    margin: 0 auto;
+  }
+  .schedule-meta {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    font-size: 13px; color: var(--ink-soft);
+    margin-top: 8px;
+    justify-content: center;
+  }
+  .schedule-meta span { display: flex; align-items: center; gap: 6px; }
+  .schedule-meta span::before { 
+    content:''; 
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent); 
+  }
+
+  .schedule-grid { 
+    display: grid; 
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .city-card {
+    display: grid;
+    grid-template-columns: 70px 1fr 120px;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.2s ease;
+    background: var(--white);
+  }
+  .city-card:hover { 
+    background: var(--accent-lt);
+    border-left: 4px solid var(--accent);
+    padding-left: 20px;
+  }
+  .city-card:last-child { border-bottom: none; }
+
+  .date-block { 
+    text-align: center;
+  }
+  .date-day {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .date-month {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+  .city-info {
+    text-align: left;
+  }
+  .city-info .city-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .city-info .venue {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+  .city-info .time-tag {
+    display: inline-block;
+    background: var(--accent-lt);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-top: 6px;
+  }
+  .register-btn {
+    background: var(--accent);
+    color: #fff;
+    padding: 11px 24px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .register-btn:hover { 
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,166,81,0.25);
+  }
+
+  /* ── WHY ATTEND ── */
+  .why-section { 
+    background: linear-gradient(135deg, var(--surface) 0%, #f5f8fa 100%);
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+  }
+  .why-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 26px;
+    transition: all 0.35s cubic-bezier(0.2, 0, 0, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+  .why-card:hover::before {
+    transform: scaleX(1);
+  }
+  .why-card:hover { 
+    box-shadow: 0 16px 48px rgba(0,166,81,0.12);
+    transform: translateY(-8px);
+    border-color: var(--accent);
+  }
+  .why-icon {
+    width: 64px; 
+    height: 64px;
+    background: linear-gradient(135deg, var(--accent-lt) 0%, rgba(232, 249, 240, 0.5) 100%);
+    border-radius: 14px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    transition: all 0.35s ease;
+    border: 1.5px solid var(--accent);
+  }
+  .why-card:hover .why-icon {
+    background: linear-gradient(135deg, var(--accent) 0%, #00a651 100%);
+    color: white;
+    transform: scale(1.12) rotate(5deg);
+    box-shadow: 0 8px 24px rgba(0,166,81,0.3);
+  }
+  .why-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+    transition: color 0.2s ease;
+  }
+  .why-card:hover h3 {
+    color: var(--accent);
+  }
+  .why-card p { 
+    font-size: 15px; 
+    color: var(--ink-soft); 
+    line-height: 1.7;
+  }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(135deg, #0F1419 0%, #1a2a3a 100%);
+    color: #fff;
+    padding: 70px 5%;
+    text-align: center;
+  }
+  .cta-banner .section-title { 
+    color: #fff; 
+    margin-bottom: 12px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-banner p { 
+    color: rgba(255,255,255,0.65); 
+    margin-bottom: 28px; 
+    font-size: 17px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.75;
+  }
+  .cta-note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.42);
+  }
+
+  /* ── FAQ ── */
+  .faq-section { 
+    background: var(--white);
+    text-align: center;
+  }
+  .faq-grid { 
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+  }
+  .faq-q {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+  }
+  .faq-q .arrow {
+    flex-shrink: 0;
+    width: 24px; 
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-lt);
+    color: var(--accent);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: 800;
+    margin-top: 2px;
+  }
+  .faq-item.open .faq-q .arrow { 
+    transform: rotate(180deg);
+    background: var(--accent);
+    color: white;
+  }
+  .faq-a {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding-top 0.25s;
+  }
+  .faq-item.open .faq-a { 
+    max-height: 400px; 
+    padding-top: 14px; 
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--tag-bg);
+    color: rgba(255,255,255,0.55);
+    padding: 48px 5% 32px;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  @media(max-width:768px){.footer-inner{grid-template-columns:1fr;gap:32px;}}
+  .footer-brand .nav-logo { 
+    font-size: 20px; 
+    display:inline-block; 
+    margin-bottom: 12px;
+  }
+  .footer-brand p { 
+    font-size: 14px; 
+    line-height: 1.7; 
+    max-width: 280px;
+    color: rgba(255,255,255,0.5);
+  }
+  footer h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 14px;
+  }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 10px; }
+  footer a { 
+    color: rgba(255,255,255,0.55); 
+    text-decoration: none; 
+    font-size: 14px; 
+    transition: all 0.2s ease;
+  }
+  footer a:hover { 
+    color: var(--accent);
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 22px;
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 12px;
+    font-size: 13px;
+  }
+  .footer-bottom a { 
+    color: rgba(255,255,255,0.42);
+  }
+  .footer-bottom a:hover {
+    color: var(--accent);
+  }
+
+  /* ── REGISTER FORM ── */
+  #register {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    padding: 70px 5%;
+  }
+  .form-wrap {
+    max-width: 540px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 18px;
+    padding: 42px 36px;
+    box-shadow: 0 20px 60px rgba(0,166,81,0.3);
+  }
+  .form-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--ink);
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .form-sub { 
+    font-size: 15px; 
+    color: var(--ink-soft); 
+    margin-bottom: 28px;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .form-row { margin-bottom: 18px; }
+  label { 
+    display: block; 
+    font-size: 13px; 
+    font-weight: 700; 
+    color: var(--ink); 
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  input, select {
+    width: 100%;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: var(--surface);
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  input::placeholder, select::placeholder { color: #999; }
+  input:focus, select:focus { 
+    border-color: var(--accent); 
+    background: var(--white);
+    box-shadow: 0 0 0 3px var(--accent-lt);
+  }
+  .form-submit {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: all 0.2s ease;
+    font-family: 'Syne', sans-serif;
+  }
+  .form-submit:hover { 
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,166,81,0.3);
+  }
+  .form-disclaimer { 
+    font-size: 13px; 
+    color: var(--ink-soft); 
+    text-align: center; 
+    margin-top: 16px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:1024px){
+    .schedule-header {
+      flex-direction: column;
+      align-items: center;
+    }
+    .schedule-header > div {
+      width: 100%;
+    }
+  }
+
+  @media(max-width:768px){
+    section { padding: 70px 5%; }
+    
+    .ticker-wrap {
+      font-size: 12px;
+      padding: 8px 0;
+    }
+    
+    nav { height: 56px; }
+    .nav-logo { font-size: 16px; }
+    .nav-cta { padding: 8px 18px; font-size: 12px; }
+
+    .hero {
+      padding: 70px 5% 80px;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+    }
+    .hero-sub { font-size: 16px; }
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-stats {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+    }
+
+    .city-card { 
+      grid-template-columns: 60px 1fr;
+      gap: 12px;
+      padding: 14px 16px;
+    }
+    .city-card:hover {
+      padding-left: 16px;
+    }
+    .register-btn { display: none; }
+    .date-day { font-size: 1.6rem; }
+    .city-info .city-name { font-size: 15px; }
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-wrap { 
+      padding: 32px 24px;
+    }
+    .form-title { font-size: 20px; }
+
+    .footer-inner { 
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    
+    .schedule-section { padding: 70px 5%; }
+    .section-title { font-size: clamp(1.5rem, 3vw, 2rem); }
+    
+    .cta-banner { padding: 70px 5%; }
+  }
+
+  @media(max-width:480px){
+    section { padding: 56px 5%; }
+    
+    .hero {
+      padding: 56px 5% 64px;
+    }
+    .hero h1 {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+    }
+    .hero-eyebrow { font-size: 11px; }
+    .hero-sub { font-size: 15px; }
+    
+    .city-card { 
+      grid-template-columns: 50px 1fr;
+      padding: 14px 12px;
+    }
+    .date-day { font-size: 1.6rem; }
+    
+    .form-wrap { 
+      padding: 24px 16px;
+      border-radius: 12px;
+    }
+    .form-title { font-size: 18px; }
+    .form-row { margin-bottom: 16px; }
+    
+    .why-card { padding: 24px 18px; }
+    .why-card h3 { font-size: 15px; }
+    .why-card p { font-size: 14px; }
+    
+    .faq-q { font-size: 15px; }
+    
+    .section-title { font-size: clamp(1.4rem, 3vw, 1.8rem); }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Ticker -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span>FREE ENTRY · 14 CITIES</span>
+    <span>FMGE-CLEARED DOCTORS AS SPEAKERS</span>
+    <span>RUSSIA · GEORGIA · UZBEKISTAN · VIETNAM</span>
+    <span>JUN – AUG 2026</span>
+    <span>RESERVE YOUR SEAT IN UNDER A MINUTE</span>
+    <span>FREE ENTRY · 14 CITIES</span>
+    <span>FMGE-CLEARED DOCTORS AS SPEAKERS</span>
+    <span>RUSSIA · GEORGIA · UZBEKISTAN · VIETNAM</span>
+    <span>JUN – AUG 2026</span>
+    <span>RESERVE YOUR SEAT IN UNDER A MINUTE</span>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav>
+  <a class="nav-logo" href="#">Students<span>Traffic</span></a>
+  <a class="nav-cta" href="#register">Reserve Free Seat</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-eyebrow">Tamil Nadu's Biggest MBBS Abroad Seminar 2026</div>
+  <h1>Talk to Doctors Who<em>Studied Abroad</em></h1>
+  <p class="hero-sub">Meet FMGE-cleared doctors face to face. Get straight answers about countries, universities, fees, and what it actually takes to practice in India after graduating abroad.</p>
+  <div class="hero-actions">
+    <a href="#register" class="btn-primary">Reserve My Free Seat →</a>
+    <a href="#cities" class="btn-ghost">Find Your City</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item"><div class="num">14<span>+</span></div><div class="label">Cities across TN</div></div>
+    <div class="stat-item"><div class="num">Free</div><div class="label">Entry & registration</div></div>
+    <div class="stat-item"><div class="num">Jun<span>–</span>Aug</div><div class="label">2026 schedule</div></div>
+    <div class="stat-item"><div class="num">9<span>:30</span></div><div class="label">Sharp every venue</div></div>
+  </div>
+</section>
+
+<!-- City strip -->
+<div class="city-strip">
+  <div class="city-strip-inner">
+    <span>Pollachi</span><span>Coimbatore</span><span>Madurai</span><span>Tirunelveli</span>
+    <span>Nagercoil</span><span>Dindigul</span><span>Trichy</span><span>Erode</span>
+    <span>Salem</span><span>Karur</span><span>Tiruvannamalai</span><span>Thiruppur</span>
+    <span>Theni</span><span>Chennai</span>
+    <span>Pollachi</span><span>Coimbatore</span><span>Madurai</span><span>Tirunelveli</span>
+    <span>Nagercoil</span><span>Dindigul</span><span>Trichy</span><span>Erode</span>
+    <span>Salem</span><span>Karur</span><span>Tiruvannamalai</span><span>Thiruppur</span>
+    <span>Theni</span><span>Chennai</span>
+  </div>
+</div>
+
+<!-- Schedule -->
+<section class="schedule-section" id="cities">
+  <div class="schedule-header">
+    <div>
+      <div class="section-eyebrow">Seminar Schedule</div>
+      <h2 class="section-title">Find Your City</h2>
+      <div class="schedule-meta">
+        <span>14 cities</span>
+        <span>Jun – Aug 2026</span>
+        <span>Free entry</span>
+      </div>
+    </div>
+    <a href="#register" class="nav-cta">Register Now</a>
+  </div>
+  <div class="schedule-grid">
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">26</div><div class="date-month">Jun</div></div>
+      <div class="city-info">
+        <div class="city-name">Pollachi</div>
+        <div class="venue">Sakthi Hotel</div>
+        <div class="time-tag">9:30 AM · Friday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">27</div><div class="date-month">Jun</div></div>
+      <div class="city-info">
+        <div class="city-name">Coimbatore</div>
+        <div class="venue">Zone by the Park</div>
+        <div class="time-tag">9:30 AM · Saturday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">28</div><div class="date-month">Jun</div></div>
+      <div class="city-info">
+        <div class="city-name">Madurai</div>
+        <div class="venue">Royal Court</div>
+        <div class="time-tag">9:30 AM · Sunday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">4</div><div class="date-month">Jul</div></div>
+      <div class="city-info">
+        <div class="city-name">Tirunelveli</div>
+        <div class="venue">RR Inn Group of Hotels</div>
+        <div class="time-tag">9:30 AM · Saturday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">5</div><div class="date-month">Jul</div></div>
+      <div class="city-info">
+        <div class="city-name">Nagercoil</div>
+        <div class="venue">Hotel Lance International</div>
+        <div class="time-tag">9:30 AM · Sunday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">11</div><div class="date-month">Jul</div></div>
+      <div class="city-info">
+        <div class="city-name">Dindigul</div>
+        <div class="venue">Parson's Court</div>
+        <div class="time-tag">9:30 AM · Saturday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">12</div><div class="date-month">Jul</div></div>
+      <div class="city-info">
+        <div class="city-name">Trichy</div>
+        <div class="venue">Breeze Residency</div>
+        <div class="time-tag">9:30 AM · Sunday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">18</div><div class="date-month">Jul</div></div>
+      <div class="city-info">
+        <div class="city-name">Erode</div>
+        <div class="venue">Hotel Royal Embassy</div>
+        <div class="time-tag">9:30 AM · Saturday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">19</div><div class="date-month">Jul</div></div>
+      <div class="city-info">
+        <div class="city-name">Salem</div>
+        <div class="venue">Hotel Shrie Shaanth</div>
+        <div class="time-tag">9:30 AM · Sunday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">25</div><div class="date-month">Jul</div></div>
+      <div class="city-info">
+        <div class="city-name">Karur</div>
+        <div class="venue">Venue to be announced</div>
+        <div class="time-tag">9:30 AM · Saturday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">1</div><div class="date-month">Aug</div></div>
+      <div class="city-info">
+        <div class="city-name">Thiruppur</div>
+        <div class="venue">The Mayberry</div>
+        <div class="time-tag">9:30 AM · Saturday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">2</div><div class="date-month">Aug</div></div>
+      <div class="city-info">
+        <div class="city-name">Theni</div>
+        <div class="venue">Hotel Theni International</div>
+        <div class="time-tag">9:30 AM · Sunday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+    <div class="city-card">
+      <div class="date-block"><div class="date-day">9</div><div class="date-month">Aug</div></div>
+      <div class="city-info">
+        <div class="city-name">Chennai</div>
+        <div class="venue">Hilton Hotel</div>
+        <div class="time-tag">9:30 AM · Sunday</div>
+      </div>
+      <a href="#register" class="register-btn">Register →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Why Attend -->
+<section class="why-section">
+  <div class="section-eyebrow">Why Attend</div>
+  <h2 class="section-title">What You'll Walk Away With</h2>
+  <p class="section-sub">No sales pitches. Just honest answers from people who've sat through FMGE, navigated NMC norms, and are practicing in India today.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🩺</div>
+      <h3>Real Doctor Speakers</h3>
+      <p>Every seminar features FMGE-cleared doctors who graduated from universities in Russia, Georgia, Uzbekistan, and Vietnam — not sales reps.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🌍</div>
+      <h3>Country-by-Country Clarity</h3>
+      <p>Understand how different countries compare on fees, duration, NMC recognition, hostel conditions, and life as an Indian student abroad.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📋</div>
+      <h3>NMC & FMGE Roadmap</h3>
+      <p>Get a clear breakdown of NMC screening norms, FMGE pass patterns, and what universities have the highest compliance track records.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💬</div>
+      <h3>Open Q&A</h3>
+      <p>Bring any question — about admissions, fees, hostel safety, recognition, or career outcomes. The floor is open the entire session.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🎓</div>
+      <h3>Dedicated Mentorship</h3>
+      <p>Students who enroll through us get a personal mentor from university selection all the way through FMGE coaching and NMC registration.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">✅</div>
+      <h3>Free. No Obligation.</h3>
+      <p>Entry is completely free. You're not committing to anything by attending. Show up, listen, ask questions, and decide on your own terms.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<div class="cta-banner">
+  <div class="section-eyebrow" style="color:#5ce65c;">Ready to Decide?</div>
+  <h2 class="section-title">Get Honest Answers in Person</h2>
+  <p>Seats fill up fast in each city. Reserve yours — it takes under 60 seconds and we'll WhatsApp you the exact venue details.</p>
+  <a href="#register" class="btn-primary" style="font-size:16px;padding:16px 40px;">Reserve My Free Seat →</a>
+  <div class="cta-note">14 cities · Jun–Aug 2026 · Free entry · No hidden fees</div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-eyebrow">Common Questions</div>
+  <h2 class="section-title">Good Questions, Straight Answers</h2>
+  <div class="faq-grid">
+
+    <div class="faq-item">
+      <div class="faq-q">What time does the seminar start and how long does it run?<span class="arrow">▾</span></div>
+      <div class="faq-a">Seminars begin at 9:30 AM. The session typically runs 2–3 hours including Q&A. Your exact city timing and venue address are sent via WhatsApp after you register.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is entry really free? Any hidden charges?<span class="arrow">▾</span></div>
+      <div class="faq-a">Completely free. There are no charges for attending — not at the door, not afterward. You're under no obligation to enroll in anything.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Should students attend, or parents, or both?<span class="arrow">▾</span></div>
+      <div class="faq-a">Both are encouraged. Students can interact directly with the doctors. Parents can ask hard questions about NMC recognition, tuition fees, hostel safety, and long-term career outcomes.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Which countries will the doctors represent?<span class="arrow">▾</span></div>
+      <div class="faq-a">Primarily Russia and Georgia, the two most popular destinations for Indian MBBS students with strong NMC compliance records. All speakers have cleared FMGE and are practicing in India.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">My city isn't on the list. What do I do?<span class="arrow">▾</span></div>
+      <div class="faq-a">Register anyway. We're adding cities based on demand and will personally notify you the moment a seminar is scheduled near you.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What happens after I register?<span class="arrow">▾</span></div>
+      <div class="faq-a">Our team sends your venue address, exact start time, and what to bring via WhatsApp. You can also ask any advance questions in the same chat.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Registration Form -->
+<section id="register">
+  <div class="form-wrap">
+    <div class="form-title">Reserve Your Free Seat</div>
+    <div class="form-sub">We'll WhatsApp you the venue, timing, and everything to bring. Takes under a minute.</div>
+    <div class="form-row">
+      <label>Full Name</label>
+      <input type="text" placeholder="Your name" />
+    </div>
+    <div class="form-row">
+      <label>Mobile Number</label>
+      <input type="tel" placeholder="+91 XXXXX XXXXX" />
+    </div>
+    <div class="form-row">
+      <label>Select Your City</label>
+      <select>
+        <option value="">Choose the nearest city</option>
+        <option>Pollachi — 26 Jun</option>
+        <option>Coimbatore — 27 Jun</option>
+        <option>Madurai — 28 Jun</option>
+        <option>Tirunelveli — 4 Jul</option>
+        <option>Nagercoil — 5 Jul</option>
+        <option>Dindigul — 11 Jul</option>
+        <option>Trichy — 12 Jul</option>
+        <option>Erode — 18 Jul</option>
+        <option>Salem — 19 Jul</option>
+        <option>Karur — 25 Jul</option>
+        <option>Thiruppur — 1 Aug</option>
+        <option>Theni — 2 Aug</option>
+        <option>Chennai — 9 Aug</option>
+        <option>My city is not listed</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Registering As</label>
+      <select>
+        <option>Student</option>
+        <option>Parent / Guardian</option>
+        <option>Both attending together</option>
+      </select>
+    </div>
+    <button class="form-submit" onclick="alert('Registration submitted! We\'ll WhatsApp you shortly.')">Confirm My Seat →</button>
+    <div class="form-disclaimer">No spam. Your number is only used to send venue details on WhatsApp.</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="nav-logo" href="#">Students<span style="color:#5ce65c">Traffic</span></a>
+      <p>Helping Indian students make informed decisions about MBBS abroad — through honest guidance and real doctor interactions.</p>
+    </div>
+    <div>
+      <h4>Seminar 2026</h4>
+      <ul>
+        <li><a href="#cities">Seminar Schedule</a></li>
+        <li><a href="#register">Register Free</a></li>
+        <li><a href="#">Countries Covered</a></li>
+        <li><a href="#">Universities</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919176162888">+91 91761 62888</a></li>
+        <li><a href="https://wa.me/919176162888">WhatsApp Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Students Traffic · MBBS Abroad Seminar</span>
+    <div style="display:flex;gap:20px;">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Main Site</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

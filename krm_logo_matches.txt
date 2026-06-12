@@ -1,0 +1,132 @@
+Match at diff line 2647:
+2637: -      <div class="section-eyebrow">Seminar Schedule</div>
+2638: -      <h2 class="section-title">Find Your City</h2>
+2639: -      <div class="schedule-meta">
+2640: -        <span>14 cities</span>
+2641: -        <span>Jun – Aug 2026</span>
+2642: -        <span>Free entry</span>
+2643: +
+2644: +  <!-- Nav -->
+2645: +  <nav>
+2646: +    <a class="nav-logo" href="#" style="display: flex; align-items: center; text-decoration: none;">
+2647: +      <svg class="krm-logo" xmlns="http://www.w3.org/2000/svg" viewBox="55 67.8 149 97"
+2648: +        style="height: 68px; width: auto; margin-right: 4px;">
+2649: +        <use href="#krm-logo"></use>
+2650: +      </svg>
+2651: +    </a>
+2652: +    <a class="nav-cta" href="#register">Reserve Free Seat</a>
+2653: +  </nav>
+2654: +
+2655: +  <!-- Hero -->
+2656: +  <section class="hero">
+2657: +    <div class="hero-eyebrow">Tamil Nadu's Biggest MBBS Abroad Seminar 2026</div>
+2658: +    <h1>Talk to Doctors Who<em>Studied Abroad</em></h1>
+2659: +    <p class="hero-sub">Meet FMGE-cleared doctors face to face. Get straight answers about countries, universities,
+2660: +      fees, and what it actually takes to practice in India after graduating abroad.</p>
+2661: +    <div class="hero-actions">
+2662: +      <a href="#register" class="btn-primary">Reserve My Free Seat →</a>
+2663: +      <a href="#cities" class="btn-ghost">Find Your City</a>
+2664: +    </div>
+2665: +    <div class="hero-stats">
+2666: +      <div class="stat-item">
+
+================================================================================
+Match at diff line 2649:
+2639: -      <div class="schedule-meta">
+2640: -        <span>14 cities</span>
+2641: -        <span>Jun – Aug 2026</span>
+2642: -        <span>Free entry</span>
+2643: +
+2644: +  <!-- Nav -->
+2645: +  <nav>
+2646: +    <a class="nav-logo" href="#" style="display: flex; align-items: center; text-decoration: none;">
+2647: +      <svg class="krm-logo" xmlns="http://www.w3.org/2000/svg" viewBox="55 67.8 149 97"
+2648: +        style="height: 68px; width: auto; margin-right: 4px;">
+2649: +        <use href="#krm-logo"></use>
+2650: +      </svg>
+2651: +    </a>
+2652: +    <a class="nav-cta" href="#register">Reserve Free Seat</a>
+2653: +  </nav>
+2654: +
+2655: +  <!-- Hero -->
+2656: +  <section class="hero">
+2657: +    <div class="hero-eyebrow">Tamil Nadu's Biggest MBBS Abroad Seminar 2026</div>
+2658: +    <h1>Talk to Doctors Who<em>Studied Abroad</em></h1>
+2659: +    <p class="hero-sub">Meet FMGE-cleared doctors face to face. Get straight answers about countries, universities,
+2660: +      fees, and what it actually takes to practice in India after graduating abroad.</p>
+2661: +    <div class="hero-actions">
+2662: +      <a href="#register" class="btn-primary">Reserve My Free Seat →</a>
+2663: +      <a href="#cities" class="btn-ghost">Find Your City</a>
+2664: +    </div>
+2665: +    <div class="hero-stats">
+2666: +      <div class="stat-item">
+2667: +        <div class="num">14<span>+</span></div>
+2668: +        <div class="label">Cities across TN</div>
+
+================================================================================
+Match at diff line 3997:
+3987: -      <a href="#">Privacy</a>
+3988: -      <a href="#">Terms</a>
+3989: -      <a href="#">Main Site</a>
+3990: +
+3991: +  <!-- Footer -->
+3992: +  <footer>
+3993: +    <div class="footer-inner">
+3994: +      <div class="footer-brand">
+3995: +        <a class="nav-logo" href="#"
+3996: +          style="display: flex; align-items: center; text-decoration: none; margin-bottom: 16px;">
+3997: +          <svg class="krm-logo" xmlns="http://www.w3.org/2000/svg" viewBox="55 67.8 149 97"
+3998: +            style="height: 68px; width: auto; margin-right: 4px;">
+3999: +            <use href="#krm-logo"></use>
+4000: +          </svg>
+4001: +        </a>
+4002: +        <p>Helping Indian students make informed decisions about MBBS abroad — through honest guidance and real doctor
+4003: +          interactions.</p>
+4004: +      </div>
+4005: +      <div>
+4006: +        <h4>Seminar 2026</h4>
+4007: +        <ul>
+4008: +          <li><a href="#cities">Seminar Schedule</a></li>
+4009: +          <li><a href="#register">Register Free</a></li>
+4010: +          <li><a href="#universities">Universities</a></li>
+4011: +          <li><a href="#partners">Trusted Partners</a></li>
+4012: +        </ul>
+4013: +      </div>
+4014: +      <div>
+4015: +        <h4>Contact</h4>
+4016: +        <ul>
+
+================================================================================
+Match at diff line 3999:
+3989: -      <a href="#">Main Site</a>
+3990: +
+3991: +  <!-- Footer -->
+3992: +  <footer>
+3993: +    <div class="footer-inner">
+3994: +      <div class="footer-brand">
+3995: +        <a class="nav-logo" href="#"
+3996: +          style="display: flex; align-items: center; text-decoration: none; margin-bottom: 16px;">
+3997: +          <svg class="krm-logo" xmlns="http://www.w3.org/2000/svg" viewBox="55 67.8 149 97"
+3998: +            style="height: 68px; width: auto; margin-right: 4px;">
+3999: +            <use href="#krm-logo"></use>
+4000: +          </svg>
+4001: +        </a>
+4002: +        <p>Helping Indian students make informed decisions about MBBS abroad — through honest guidance and real doctor
+4003: +          interactions.</p>
+4004: +      </div>
+4005: +      <div>
+4006: +        <h4>Seminar 2026</h4>
+4007: +        <ul>
+4008: +          <li><a href="#cities">Seminar Schedule</a></li>
+4009: +          <li><a href="#register">Register Free</a></li>
+4010: +          <li><a href="#universities">Universities</a></li>
+4011: +          <li><a href="#partners">Trusted Partners</a></li>
+4012: +        </ul>
+4013: +      </div>
+4014: +      <div>
+4015: +        <h4>Contact</h4>
+4016: +        <ul>
+4017: +          <li><a href="tel:+919176162888">+91 91761 62888</a></li>
+4018: +          <li><a href="https://wa.me/919176162888">WhatsApp Us</a></li>
+
+================================================================================

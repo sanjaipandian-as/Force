@@ -3054,7 +3054,7 @@
       <p id="modal-subtitle-text">We'll WhatsApp you the venue details and timing.</p>
     </div>
     <form class="modal-form" id="popup-form"
-      onsubmit="event.preventDefault(); const name = document.getElementById('modal-name').value; const univ = document.getElementById('modal-univ-name').value; const msg = univ ? `Application submitted for ${univ}! We'll WhatsApp you shortly.` : 'Registration submitted! We\'ll WhatsApp you shortly.'; alert(msg); closeModal();">
+      onsubmit="event.preventDefault(); submitRegistration();">
       <input type="hidden" id="modal-univ-name" value="" />
 
       <div class="form-row">
@@ -3321,6 +3321,7 @@
     }
   }
 </script>
+  <script src="registration.js"></script>
 </body>
 
 </html>

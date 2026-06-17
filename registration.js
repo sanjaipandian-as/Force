@@ -7,6 +7,8 @@ async function submitRegistration() {
   const phone = document.getElementById('modal-phone').value.trim();
   const seminarCity = document.getElementById('modal-select-city').value;
   const userCity = document.getElementById('modal-user-city').value;
+  const studyInterestRadio = document.querySelector('input[name="study_interest"]:checked');
+  const studyInterest = studyInterestRadio ? studyInterestRadio.value : 'Interested';
 
   // Validate required fields
   if (!name || !phone || !seminarCity || !userCity) {
@@ -30,7 +32,8 @@ async function submitRegistration() {
         name: name,
         phone: phone,
         seminarCity: seminarCity,
-        userCity: userCity
+        userCity: userCity,
+        studyInterest: studyInterest
       })
     });
 

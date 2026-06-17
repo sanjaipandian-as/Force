@@ -10,33 +10,11 @@
     content="Register FREE for Tamil Nadu's biggest MBBS Abroad Seminar 2026. Meet FMGE-cleared doctors. Explore NMC-compliant universities in Russia, Georgia, Vietnam, Uzbekistan. 14 cities, Jun–Aug 2026.">
   <meta name="theme-color" content="#00bb23">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <!-- DNS Prefetch & Preconnect for maximum font/CDN speed -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
   <!-- Preload the critical above-the-fold Hero Background Image -->
-  <link rel="preload" href="assets/hero_university_bg.webp" as="image" fetchpriority="high">
-
-  <!-- Asynchronous Google Fonts Loading to prevent render-blocking -->
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
-    as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet">
-  </noscript>
+  <link rel="preload" href="assets/Hereup.webp" as="image" fetchpriority="high">
 
   <style>
-    @font-face {
-      font-family: 'Twemoji Country Flags';
-      unicode-range: U+1F1E6-1F1FF, U+1F3F4, U+E0062-E0063, U+E0065, U+E0067, U+E006C, U+E006E, U+E0073-E0074, U+E0077, U+E007F;
-      src: url('https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill@0.1/dist/TwemojiCountryFlags.woff2') format('woff2');
-      font-display: swap;
-    }
 
     *,
     *::before,
@@ -67,17 +45,18 @@
       --success: #00bb23;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: "Twemoji Country Flags", 'Inter', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       background: var(--surface);
       color: var(--ink);
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     /* ── TICKER ── */
@@ -90,27 +69,18 @@
       font-size: 13px;
       font-weight: 500;
       letter-spacing: 0.04em;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .ticker-track {
       display: inline-block;
-      animation: ticker 28s linear infinite;
-      will-change: transform;
       contain: layout style;
+      animation: scrollLeft 15s linear infinite;
+      will-change: transform;
     }
 
     .ticker-track span {
       margin-right: 60px;
-    }
-
-    @keyframes ticker {
-      0% {
-        transform: translateX(0)
-      }
-
-      100% {
-        transform: translateX(-50%)
-      }
     }
 
     /* ── NAV ── */
@@ -118,8 +88,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(14px);
+      background: #fff;
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -129,13 +98,11 @@
     }
 
     .nav-logo {
-      font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 18px;
       color: var(--ink);
       text-decoration: none;
       letter-spacing: -0.5px;
-      transition: color 0.2s ease;
     }
 
     .nav-logo span {
@@ -152,47 +119,18 @@
       font-weight: 700;
       cursor: pointer;
       text-decoration: none;
-      transition: all 0.2s ease;
     }
 
     .nav-cta:hover {
       background: var(--accent-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 187, 35, 0.25);
     }
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(rgba(15, 20, 25, 0.82), rgba(15, 20, 25, 0.9)), url('assets/hero_university_bg.webp');
-      background-size: cover;
-      background-position: center;
+      background: var(--hero-bg);
       color: #fff;
       padding: 55px 5% 65px;
-      position: relative;
-      overflow: hidden;
       text-align: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -180px;
-      right: -100px;
-      width: 620px;
-      height: 620px;
-      background: radial-gradient(circle, rgba(0, 187, 35, 0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -150px;
-      left: -80px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(245, 160, 14, 0.12) 0%, transparent 70%);
-      pointer-events: none;
     }
 
     .hero-eyebrow {
@@ -218,24 +156,9 @@
       height: 8px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
-      animation: pulse-dot 2s infinite;
-    }
-
-    @keyframes pulse-dot {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: 0.5
-      }
     }
 
     .hero h1 {
-      font-family: 'Inter', sans-serif;
       font-size: clamp(2.4rem, 6vw, 4.2rem);
       font-weight: 700;
       line-height: 1.15;
@@ -276,15 +199,11 @@
       font-size: 15px;
       text-decoration: none;
       display: inline-block;
-      transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
-      box-shadow: 0 8px 24px rgba(0, 187, 35, 0.3);
       border: none;
       cursor: pointer;
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 36px rgba(0, 187, 35, 0.4);
       background: var(--accent-dark);
     }
 
@@ -296,7 +215,6 @@
       font-weight: 600;
       font-size: 15px;
       text-decoration: none;
-      transition: all 0.25s;
     }
 
     .btn-ghost:hover {
@@ -320,7 +238,6 @@
     }
 
     .stat-item .num {
-      font-family: 'Inter', sans-serif;
       font-size: 2.6rem;
       font-weight: 700;
       color: #fff;
@@ -343,26 +260,34 @@
 
     /* ── CITY STRIP ── */
     .city-strip {
-      background: linear-gradient(135deg, #00bb23 0%, #008819 100%);
-      padding: 16px 5%;
+      background: var(--accent);
+      padding: 16px 0;
       overflow: hidden;
       white-space: nowrap;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .city-strip-inner {
       display: inline-block;
-      animation: ticker 30s linear infinite;
-      will-change: transform;
       contain: layout style;
+      animation: scrollLeft 30s linear infinite;
+      will-change: transform;
     }
 
     .city-strip-inner span {
-      font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 13.5px;
       letter-spacing: 0.05em;
       color: #fff;
       margin-right: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .city-strip-inner span::before {
+      content: '📍';
+      font-size: 12px;
     }
 
 
@@ -398,7 +323,6 @@
     }
 
     .section-title {
-      font-family: 'Inter', sans-serif;
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
       font-weight: 700;
       letter-spacing: -0.9px;
@@ -474,18 +398,8 @@
       padding: 18px 24px;
       border: 1.5px solid var(--border);
       border-radius: 16px;
-      transition: all 0.25s ease;
       background: var(--white);
       text-decoration: none;
-    }
-
-    .city-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 10px 30px rgba(0, 187, 35, 0.04);
-    }
-
-    .city-card:hover .calendar-badge {
-      border-color: var(--accent);
     }
 
     .calendar-badge {
@@ -499,7 +413,6 @@
       align-items: center;
       justify-content: center;
       background: var(--white);
-      transition: border-color 0.2s ease;
     }
 
     .cal-month {
@@ -523,7 +436,6 @@
     }
 
     .cal-day {
-      font-family: 'Inter', sans-serif;
       font-size: 19px;
       font-weight: 800;
       color: var(--ink);
@@ -539,7 +451,6 @@
     }
 
     .city-name {
-      font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 18px;
       color: var(--ink);
@@ -598,14 +509,12 @@
       text-decoration: none;
       text-align: center;
       white-space: nowrap;
-      transition: all 0.2s ease;
       border: none;
       cursor: pointer;
     }
 
     .register-btn:hover {
       background: var(--accent-dark);
-      box-shadow: 0 4px 12px rgba(0, 187, 35, 0.2);
     }
 
     /* ── WHY ATTEND ── */
@@ -630,7 +539,6 @@
     }
 
     .why-main-title {
-      font-family: 'Inter', sans-serif;
       font-size: clamp(2rem, 4.5vw, 3.2rem);
       font-weight: 800;
       line-height: 1.15;
@@ -641,9 +549,6 @@
 
     .why-main-title span {
       color: var(--accent);
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
     .why-main-sub {
@@ -672,15 +577,9 @@
       border: 1.5px solid var(--border);
       border-radius: 16px;
       padding: 28px 24px;
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-    }
-
-    .why-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 10px 30px rgba(0, 187, 35, 0.04);
     }
 
     .why-card-header {
@@ -691,7 +590,6 @@
     }
 
     .why-card-header h3 {
-      font-family: 'Inter', sans-serif;
       font-size: 16px;
       font-weight: 700;
       color: var(--ink);
@@ -748,9 +646,7 @@
 
     /* ── CTA BANNER ── */
     .cta-banner {
-      background: linear-gradient(rgba(15, 20, 25, 0.88), rgba(15, 20, 25, 0.94)), url('assets/hero_medical_bg.webp');
-      background-size: cover;
-      background-position: center;
+      background: var(--hero-bg);
       color: #fff;
       padding: 55px 5%;
       text-align: center;
@@ -794,7 +690,6 @@
     }
 
     .faq-title {
-      font-family: 'Inter', sans-serif;
       font-size: 28px;
       font-weight: 700;
       color: var(--ink);
@@ -821,7 +716,6 @@
     }
 
     .faq-q {
-      font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 16px;
       color: var(--ink);
@@ -836,7 +730,9 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #FFFFFF;
+      background-color: #FFFFFF;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+      background-size: 30px 30px;
       color: var(--ink-soft);
       padding: 64px 5% 40px;
       position: relative;
@@ -929,7 +825,7 @@
     }
 
     footer h4 {
-      font-family: 'Inter', sans-serif;
+      font-family: inherit;
       font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
@@ -948,10 +844,8 @@
 
     footer a {
       color: #374151;
-      /* Dark grey/charcoal for better visibility */
       text-decoration: none;
       font-size: 14px;
-      transition: all 0.2s ease;
     }
 
     footer a:hover {
@@ -996,7 +890,7 @@
     }
 
     .form-title {
-      font-family: 'Inter', sans-serif;
+      font-family: inherit;
       font-weight: 600;
       font-size: 24px;
       color: var(--ink);
@@ -1033,11 +927,10 @@
       border-radius: 10px;
       padding: 13px 16px;
       font-size: 15px;
-      font-family: 'Inter', sans-serif;
+      font-family: inherit;
       color: var(--ink);
       background: var(--surface);
       outline: none;
-      transition: all 0.2s ease;
     }
 
     input::placeholder,
@@ -1063,14 +956,11 @@
       font-weight: 700;
       cursor: pointer;
       margin-top: 8px;
-      transition: all 0.2s ease;
-      font-family: 'Syne', sans-serif;
+      font-family: inherit;
     }
 
     .form-submit:hover {
       background: var(--accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 187, 35, 0.3);
     }
 
     .form-disclaimer {
@@ -1261,14 +1151,12 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(8px);
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 1000;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.3s ease;
     }
 
     .modal-overlay.active {
@@ -1286,13 +1174,8 @@
       padding: 36px;
       position: relative;
       box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
-      transform: translateY(20px);
-      transition: transform 0.3s ease;
     }
 
-    .modal-overlay.active .modal-container {
-      transform: translateY(0);
-    }
 
     .modal-close {
       position: absolute;
@@ -1306,7 +1189,6 @@
       background: none;
       border: none;
       outline: none;
-      transition: color 0.2s;
     }
 
     .modal-close:hover {
@@ -1352,11 +1234,10 @@
       border-radius: 14px;
       padding: 14px 16px;
       font-size: 15px;
-      font-family: 'Inter', sans-serif;
+      font-family: inherit;
       color: var(--ink);
       background: var(--surface);
       outline: none;
-      transition: all 0.2s ease;
     }
 
     .modal-form input[type="text"]::placeholder {
@@ -1367,7 +1248,6 @@
     .modal-form select:focus {
       border-color: #C38B45;
       background: var(--white);
-      box-shadow: 0 0 0 3px rgba(195, 139, 69, 0.15);
     }
 
     .modal-form select {
@@ -1386,13 +1266,11 @@
       border-radius: 14px;
       background: var(--surface);
       padding: 0 16px;
-      transition: all 0.2s ease;
     }
 
     .phone-input-group:focus-within {
       border-color: #C38B45;
       background: var(--white);
-      box-shadow: 0 0 0 3px rgba(195, 139, 69, 0.15);
     }
 
     .phone-flag-selector {
@@ -1421,7 +1299,6 @@
     .btn-reserve {
       width: 100%;
       background-color: #C38B45;
-      /* Caramel orange from screenshot */
       color: #ffffff;
       border: none;
       border-radius: 14px;
@@ -1429,7 +1306,6 @@
       font-size: 16px;
       font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1439,10 +1315,6 @@
 
     .btn-reserve:hover {
       background-color: #B27634;
-    }
-
-    .btn-reserve:active {
-      transform: scale(0.98);
     }
 
     /* ── UNIVERSITIES SECTION (REDESIGNED) ── */
@@ -1480,7 +1352,7 @@
     }
 
     .country-name {
-      font-family: 'Inter', sans-serif;
+      font-family: inherit;
       font-size: 24px;
       font-weight: 700;
       color: var(--ink);
@@ -1543,18 +1415,8 @@
       display: flex;
       flex-direction: column;
       height: 100%;
-      box-shadow: 0 4px 20px rgba(15, 20, 25, 0.02);
-      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
       position: relative;
       contain: layout style paint;
-    }
-
-    .univ-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent);
-      box-shadow: 0 12px 30px rgba(0, 187, 35, 0.08);
     }
 
     .univ-card-thumb {
@@ -1569,20 +1431,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .univ-card:hover .univ-card-thumb img {
-      transform: scale(1.06);
     }
 
     .univ-program-badge {
       position: absolute;
       top: 12px;
       left: 12px;
-      background: rgba(15, 20, 25, 0.75);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: rgba(15, 20, 25, 0.8);
       color: #fff;
       font-size: 10.5px;
       font-weight: 700;
@@ -1639,14 +1494,12 @@
     }
 
     .univ-card-title {
-      font-family: 'Inter', sans-serif;
       font-size: 16px;
       font-weight: 700;
       color: var(--ink);
       margin: 0 0 14px 0;
       line-height: 1.4;
       min-height: 48px;
-      /* Alignment for 2 lines */
       display: flex;
       align-items: center;
     }
@@ -1694,7 +1547,7 @@
     .btn-univ-apply {
       display: block;
       width: 100%;
-      background: linear-gradient(135deg, #FF9F0A 0%, #FF7B00 100%);
+      background: #FF9F0A;
       color: #fff;
       border: none;
       padding: 12px 16px;
@@ -1704,16 +1557,12 @@
       cursor: pointer;
       text-decoration: none;
       text-align: center;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(255, 123, 0, 0.2);
-      font-family: 'Inter', sans-serif;
+      font-family: inherit;
       box-sizing: border-box;
     }
 
     .btn-univ-apply:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(255, 123, 0, 0.35);
-      background: linear-gradient(135deg, #FF7B00 0%, #FF6200 100%);
+      background: #FF7B00;
     }
 
 
@@ -1736,20 +1585,9 @@
       font-size: 20px;
     }
 
-    /* ── TRUSTED PARTNERS ── */
     .partners-section {
       padding: 50px 5%;
       background: var(--surface);
-    }
-
-    .partner-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent) !important;
-      box-shadow: 0 12px 30px rgba(0, 187, 35, 0.08) !important;
-    }
-
-    .partner-card:hover .partner-img {
-      transform: scale(1.06);
     }
 
     /* ── MEDIA GALLERY ── */
@@ -1771,13 +1609,6 @@
       border-radius: 20px;
       overflow: hidden;
       border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-    }
-
-    .media-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
     }
 
     .media-thumb-container {
@@ -1795,11 +1626,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .media-card:hover .media-img {
-      transform: scale(1.06);
     }
 
     .video-overlay {
@@ -1813,11 +1639,6 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .video-overlay:hover {
-      background: rgba(0, 0, 0, 0.45);
     }
 
     .play-btn {
@@ -1831,15 +1652,6 @@
       align-items: center;
       justify-content: center;
       padding-left: 4px;
-      box-shadow: 0 4px 15px rgba(245, 160, 14, 0.4);
-      transition: all 0.3s ease;
-    }
-
-    .video-overlay:hover .play-btn {
-      transform: scale(1.15);
-      background: var(--white);
-      color: var(--orange);
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
     }
 
     .image-zoom-overlay {
@@ -1848,29 +1660,16 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0);
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: all 0.3s ease;
       cursor: pointer;
-    }
-
-    .media-thumb-container:hover .image-zoom-overlay {
-      background: rgba(0, 0, 0, 0.25);
-      opacity: 1;
     }
 
     .zoom-icon {
       font-size: 24px;
       color: #fff;
-      transform: scale(0.8);
-      transition: transform 0.3s ease;
-    }
-
-    .media-thumb-container:hover .zoom-icon {
-      transform: scale(1);
     }
 
     .media-info {
@@ -1913,27 +1712,6 @@
       contain: layout style;
     }
 
-    .modal-container {
-      will-change: transform;
-    }
-
-    .modal-overlay {
-      will-change: opacity;
-    }
-
-    /* Override transition:all with specific properties for faster repaints */
-    .media-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .nav-cta {
-      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .register-btn {
-      transition: background-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
     /* ── VIDEO MODAL ── */
     #video-modal .modal-container {
       max-width: 800px;
@@ -1974,6 +1752,9 @@
     <span>🇷🇺 RUSSIA · DOCTOR MAKING DOCTOR</span>
     <span>🇬🇪 GEORGIA · DOCTOR MAKING DOCTOR</span>
     <span>🇺🇿 UZBEKISTAN · DOCTOR MAKING DOCTOR</span>
+    <span>🇷🇺 RUSSIA · DOCTOR MAKING DOCTOR</span>
+    <span>🇬🇪 GEORGIA · DOCTOR MAKING DOCTOR</span>
+    <span>🇺🇿 UZBEKISTAN · DOCTOR MAKING DOCTOR</span>
   </div>
 </div>
 
@@ -1988,8 +1769,11 @@
 <!-- Hero -->
 <section class="hero-image-section" style="padding: 0; margin: 0; background: #0F1419;">
   <a href="#register" style="display: block; cursor: pointer;">
-    <img src="assets/Hereup.png" alt="MBBS Abroad Seminar"
-      style="width: 100%; height: auto; display: block;" />
+    <picture>
+      <source srcset="assets/Hereup.webp" type="image/webp"><img src="assets/Hereup.png" alt="MBBS Abroad Seminar"
+        width="1920" height="auto" fetchpriority="high" decoding="sync"
+        style="width: 100%; height: auto; display: block;" />
+    </picture>
   </a>
 </section>
 
@@ -2007,47 +1791,41 @@
   </div>
 </div>
 
-<!-- Past Events / Completed Seminars -->
-<section class="past-events-section" style="padding: 40px 5%; background: var(--surface);">
-  <div
-    style="max-width: 900px; margin: 0 auto; background: #ffffff; border-radius: 24px; padding: 32px 40px; box-shadow: 0 12px 40px rgba(0, 187, 35, 0.08); border: 1px solid rgba(0, 187, 35, 0.15); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; position: relative; overflow: hidden;">
-    <!-- Decorative background glow -->
-    <div
-      style="position: absolute; right: -50px; top: -50px; width: 250px; height: 250px; background: var(--accent); opacity: 0.05; filter: blur(40px); border-radius: 50%;">
-    </div>
-    <div
-      style="position: absolute; left: -50px; bottom: -50px; width: 200px; height: 200px; background: var(--accent); opacity: 0.05; filter: blur(40px); border-radius: 50%;">
-    </div>
-
-    <div style="flex: 1; min-width: 280px; z-index: 1;">
-      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-        <div
-          style="background: rgba(0, 187, 35, 0.1); border: 1px solid rgba(0, 187, 35, 0.2); color: #00bb23; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          Completed Successfully
+<!-- Previous Seminars Section -->
+<section class="media-section" id="media-gallery" style="padding: 40px 5%; background: #fafafa;">
+  <div style="max-width: 1100px; margin: 0 auto; background: var(--white); border-radius: 24px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0, 187, 35, 0.1);">
+    
+    <!-- Top Header row -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; flex-wrap: wrap; gap: 24px;">
+      <div>
+        <div style="color: #00bb23; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Previous Seminars</div>
+        <h2 style="font-size: 32px; font-weight: 700; color: var(--ink); margin: 0 0 12px 0;">May 10 – Chennai</h2>
+        <div style="display: flex; align-items: center; color: var(--ink-soft); font-size: 16px; gap: 6px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Hotel Hilton
         </div>
       </div>
-      <h3 style="font-size: 28px; font-weight: 800; color: #0f1419; margin: 0 0 8px 0; line-height: 1.2;">2) May 10 –
-        Chennai</h3>
-      <div style="font-size: 15px; color: #525661; display: flex; align-items: center; gap: 6px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
-        </svg>
-        Hotel Hilton
+      
+      <div style="background: rgba(0, 187, 35, 0.06); border: 1px solid rgba(0, 187, 35, 0.15); border-radius: 16px; padding: 20px 40px; text-align: center;">
+        <div style="font-size: 48px; font-weight: 800; color: #00bb23; line-height: 1;">263</div>
+        <div style="font-size: 13px; font-weight: 700; color: #555; letter-spacing: 0.05em; margin-top: 8px;">STUDENTS ATTENDED</div>
       </div>
     </div>
 
-    <div
-      style="background: rgba(0, 187, 35, 0.04); border: 1px solid rgba(0, 187, 35, 0.1); padding: 24px 36px; border-radius: 16px; text-align: center; z-index: 1; display: flex; flex-direction: column; justify-content: center; min-width: 200px;">
-      <div style="font-size: 42px; font-weight: 800; color: #00bb23; line-height: 1; margin-bottom: 6px;">263</div>
-      <div
-        style="font-size: 13px; font-weight: 700; color: #525661; text-transform: uppercase; letter-spacing: 0.05em;">
-        Students Attended</div>
+    <!-- Images row -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+      <div style="border-radius: 12px; overflow: hidden; height: 180px;">
+        <img src="assets/8K7A3661.webp" loading="lazy" decoding="async" alt="Seminar Image 1" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      </div>
+      <div style="border-radius: 12px; overflow: hidden; height: 180px;">
+        <img src="assets/DSC04685.webp" loading="lazy" decoding="async" alt="Seminar Image 2" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      </div>
+      <div style="border-radius: 12px; overflow: hidden; height: 180px;">
+        <img src="assets/DSC04551.webp" loading="lazy" decoding="async" alt="Seminar Image 3" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      </div>
+      <div style="border-radius: 12px; overflow: hidden; height: 180px;">
+        <img src="assets/DSC04762.webp" loading="lazy" decoding="async" alt="Seminar Image 4" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      </div>
     </div>
   </div>
 </section>
@@ -2364,259 +2142,90 @@
   </div>
   <div class="univ-grid">
 
-        <!-- Russia University 1 -->
-        <div class="univ-card" data-univ="Samara State Medical University">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Russia</span>
-            <img src="assets/samara.jpg" loading="lazy" decoding="async" alt="Samara State Medical University" />
-            <div class="univ-logo-avatar ru">SSMU</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Samara State Medical University</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>4,50,000 Rubles</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">A top-ranked Russian public university featuring a large network of university clinics for excellent bedside teaching.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
+    <!-- Russia University 1 -->
+    <div class="univ-card" data-univ="Samara State Medical University">
+      <div class="univ-card-thumb">
+        <span class="univ-program-badge">MBBS in Russia</span>
+        <img src="assets/samara.webp" loading="lazy" decoding="async" alt="Samara State Medical University" />
+      </div>
+      <div class="univ-card-body">
+        <h4 class="univ-card-title">Samara State Medical University</h4>
+        <div class="univ-meta-grid">
+          <div class="univ-meta-item fee">
+            <span>4,50,000 Rubles</span>
           </div>
         </div>
-
-        <!-- Russia University 2 -->
-        <div class="univ-card" data-univ="Mordovia State University">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Russia</span>
-            <img src="assets/Mardovia.webp" loading="lazy" decoding="async" alt="Mordovia State University" />
-            <div class="univ-logo-avatar ru">MSU</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Mordovia State University</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>4,26,000 Rubles</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">National Research University offering high-standard medical education with an affordable cost of living and advanced practical learning.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Russia University 3 -->
-        <div class="univ-card" data-univ="Crimea Federal Medical University">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Russia</span>
-            <img src="assets/crimae.jpg" loading="lazy" decoding="async" alt="Crimea Federal Medical University" />
-            <div class="univ-logo-avatar ru">CFMU</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Crimea Federal Medical University</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>3,60,000 Rubles</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">Highly popular among Indian students, offering a long-standing history of medical teaching in English with premium campus facilities.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Russia University 4 -->
-        <div class="univ-card" data-univ="Kazan State Medical University">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Russia</span>
-            <img src="assets/kazan%20state.jpg" loading="lazy" decoding="async" alt="Kazan State Medical University" />
-            <div class="univ-logo-avatar ru">KSMU</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Kazan State Medical University</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>6,26,000 Rubles</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">Well-known state academy in Udmurtia with a focus on comprehensive medical theory, clinical internships, and highly experienced faculty.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
-          </div>
+        <p class="univ-card-desc">A top-ranked Russian public university featuring a large network of university clinics
+          for excellent bedside teaching.</p>
+        <div class="univ-card-actions">
+          <button class="btn-univ-apply">Apply Now</button>
         </div>
       </div>
-
-  <!-- Vietnam Section -->
-  <div class="country-header">
-    <div class="country-title-group">
-      <span class="country-flag">🇻🇳</span>
-      <h3 class="country-name">Vietnam</h3>
     </div>
-    <span class="country-program-badge">MBBS in Vietnam</span>
-  </div>
-  <div class="univ-grid">
 
-        <!-- Vietnam University 1 -->
-        <div class="univ-card" data-univ="Buon Ma Thuot Medical University">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Vietnam</span>
-            <img src="assets/Buon%20ma.webp" loading="lazy" decoding="async" alt="Buon Ma Thuot Medical University" />
-            <div class="univ-logo-avatar vn">BMTU</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Buon Ma Thuot Medical University</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>$5,000/Yr</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">A leading medical training center in the Western Highlands of Vietnam, offering state-of-the-art facilities and hands-on clinical training.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
+    <!-- Russia University 2 -->
+    <div class="univ-card" data-univ="Mordovia State University">
+      <div class="univ-card-thumb">
+        <span class="univ-program-badge">MBBS in Russia</span>
+        <img src="assets/Mardovia.webp" loading="lazy" decoding="async" alt="Mordovia State University" />
+      </div>
+      <div class="univ-card-body">
+        <h4 class="univ-card-title">Mordovia State University</h4>
+        <div class="univ-meta-grid">
+          <div class="univ-meta-item fee">
+            <span>4,26,000 Rubles</span>
           </div>
         </div>
-
-        <!-- Vietnam University 2 -->
-        <div class="univ-card" data-univ="Dai Nam University Faculty of Medicine">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Vietnam</span>
-            <img src="assets/dai%20num.avif" loading="lazy" decoding="async" alt="Dai Nam University Faculty of Medicine" />
-            <div class="univ-logo-avatar vn">DNU</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Dai Nam University Faculty of Medicine</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>$4,100/Yr</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">Renowned for its modern integrated curriculum, professional labs, and extensive clinical internships in major domestic hospitals.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vietnam University 3 -->
-        <div class="univ-card" data-univ="Phan Chau Trinh University">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Vietnam</span>
-            <img src="assets/phan%20chaue.jpg" loading="lazy" decoding="async" alt="Phan Chau Trinh University" />
-            <div class="univ-logo-avatar vn">PCTU</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Phan Chau Trinh University</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>$5,200/Yr</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">A premier medical university in Quang Nam, focused on advanced clinical simulation training and strong medical research programs.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vietnam University 4 -->
-        <div class="univ-card" data-univ="Can Tho University of Medicine and Pharmacy">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Vietnam</span>
-            <img src="assets/can%20tho.jpg" loading="lazy" decoding="async" alt="Can Tho University of Medicine and Pharmacy" />
-            <div class="univ-logo-avatar vn">CTUM</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Can Tho University of Medicine and Pharmacy</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>$5,000/Yr</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">One of the largest government medical universities in the Mekong Delta, known for high FMGE and clinical success rates.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
-          </div>
+        <p class="univ-card-desc">National Research University offering high-standard medical education with an
+          affordable cost of living and advanced practical learning.</p>
+        <div class="univ-card-actions">
+          <button class="btn-univ-apply">Apply Now</button>
         </div>
       </div>
-
-  <!-- Uzbekistan Section -->
-  <div class="country-header">
-    <div class="country-title-group">
-      <span class="country-flag">🇺🇿</span>
-      <h3 class="country-name">Uzbekistan</h3>
     </div>
-    <span class="country-program-badge">MBBS in Uzbekistan</span>
-  </div>
-  <div class="univ-grid grid-3">
 
-        <!-- Uzbekistan University 1 -->
-        <div class="univ-card" data-univ="Tashkent State Medical University">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Uzbekistan</span>
-            <img src="assets/tashkent.webp" loading="lazy" decoding="async" alt="Tashkent State Medical University" />
-            <div class="univ-logo-avatar uz">TSMU</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Tashkent State Medical University</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>$3,600/Yr</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">A leading medical university in Central Asia with state-of-the-art research laboratories and low cost of living for Indian students.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
+    <!-- Russia University 3 -->
+    <div class="univ-card" data-univ="Crimea Federal Medical University">
+      <div class="univ-card-thumb">
+        <span class="univ-program-badge">MBBS in Russia</span>
+        <img src="assets/crimae.webp" loading="lazy" decoding="async" alt="Crimea Federal Medical University" />
+      </div>
+      <div class="univ-card-body">
+        <h4 class="univ-card-title">Crimea Federal Medical University</h4>
+        <div class="univ-meta-grid">
+          <div class="univ-meta-item fee">
+            <span>3,60,000 Rubles</span>
           </div>
         </div>
-
-        <!-- Uzbekistan University 2 -->
-        <div class="univ-card" data-univ="Fergana Medical Institute of Public Health">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Uzbekistan</span>
-            <img src="assets/fergama.jpg" loading="lazy" decoding="async" alt="Fergana Medical Institute of Public Health" />
-            <div class="univ-logo-avatar uz">FMIPH</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Fergana Medical Institute of Public Health</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>$3,500/Yr</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">A rapidly growing institute focused on modern public health and clinical medicine with excellent facilities for international students.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Uzbekistan University 3 -->
-        <div class="univ-card" data-univ="Andijan State Medical Institute">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Uzbekistan</span>
-            <img src="assets/Andijan.avif" loading="lazy" decoding="async" alt="Andijan State Medical Institute" />
-            <div class="univ-logo-avatar uz">ASMI</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">Andijan State Medical Institute</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>$3,400/Yr</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">Renowned for its dedicated staff, modern labs, and high clinical patient load. Fully aligned with international education guidelines.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
-          </div>
+        <p class="univ-card-desc">Highly popular among Indian students, offering a long-standing history of medical
+          teaching in English with premium campus facilities.</p>
+        <div class="univ-card-actions">
+          <button class="btn-univ-apply">Apply Now</button>
         </div>
       </div>
+    </div>
+
+    <!-- Russia University 4 -->
+    <div class="univ-card" data-univ="Kazan State Medical University">
+      <div class="univ-card-thumb">
+        <span class="univ-program-badge">MBBS in Russia</span>
+        <img src="assets/kazan%20state.webp" loading="lazy" decoding="async" alt="Kazan State Medical University" />
+      </div>
+      <div class="univ-card-body">
+        <h4 class="univ-card-title">Kazan State Medical University</h4>
+        <div class="univ-meta-grid">
+          <div class="univ-meta-item fee">
+            <span>6,26,000 Rubles</span>
+          </div>
+        </div>
+        <p class="univ-card-desc">Well-known state academy in Udmurtia with a focus on comprehensive medical theory,
+          clinical internships, and highly experienced faculty.</p>
+        <div class="univ-card-actions">
+          <button class="btn-univ-apply">Apply Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Georgia Section -->
   <div class="country-header">
@@ -2628,48 +2237,123 @@
   </div>
   <div class="univ-grid grid-3">
 
-        <!-- Georgia University 1 -->
-        <div class="univ-card" data-univ="University of Georgia">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Georgia</span>
-            <img src="assets/University%20of%20Georgia.jpg" loading="lazy" decoding="async" alt="University of Georgia" />
-            <div class="univ-logo-avatar ge">UOG</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">University of Georgia</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>$6,500/Yr</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">Premier private university offering world-class medical programs, high FMGE success coaching, and a rich multicultural environment.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
+    <!-- Georgia University 1 -->
+    <div class="univ-card" data-univ="University of Georgia">
+      <div class="univ-card-thumb">
+        <span class="univ-program-badge">MBBS in Georgia</span>
+        <img src="assets/University%20of%20Georgia.webp" loading="lazy" decoding="async" alt="University of Georgia" />
+      </div>
+      <div class="univ-card-body">
+        <h4 class="univ-card-title">University of Georgia</h4>
+        <div class="univ-meta-grid">
+          <div class="univ-meta-item fee">
+            <span>$6,500/Yr</span>
           </div>
         </div>
-
-        <!-- Georgia University 2 -->
-        <div class="univ-card" data-univ="BAU International University">
-          <div class="univ-card-thumb">
-            <span class="univ-program-badge">MBBS in Georgia</span>
-            <img src="assets/BAU%20International%20University.jpg" loading="lazy" decoding="async" alt="BAU International University" />
-            <div class="univ-logo-avatar ge">BAU</div>
-          </div>
-          <div class="univ-card-body">
-            <h4 class="univ-card-title">BAU International University</h4>
-            <div class="univ-meta-grid">
-              <div class="univ-meta-item fee">
-                <span>$6,500/Yr</span>
-              </div>
-            </div>
-            <p class="univ-card-desc">An international-standard medical school located in Batumi, featuring modern American/European curriculum and clinical exposure.</p>
-            <div class="univ-card-actions">
-              <button class="btn-univ-apply">Apply Now</button>
-            </div>
-          </div>
+        <p class="univ-card-desc">Premier private university offering world-class medical programs, high FMGE success
+          coaching, and a rich multicultural environment.</p>
+        <div class="univ-card-actions">
+          <button class="btn-univ-apply">Apply Now</button>
         </div>
       </div>
+    </div>
+
+    <!-- Georgia University 2 -->
+    <div class="univ-card" data-univ="Georgian National Medical University">
+      <div class="univ-card-thumb">
+        <span class="univ-program-badge">MBBS in Georgia</span>
+        <img src="assets/Georgian%20National%20Medical%20University.webp" loading="lazy" decoding="async"
+          alt="Georgian National Medical University" />
+      </div>
+      <div class="univ-card-body">
+        <h4 class="univ-card-title">Georgian National Medical University</h4>
+        <div class="univ-meta-grid">
+          <div class="univ-meta-item fee">
+            <span>$5,900/Yr</span>
+          </div>
+        </div>
+        <p class="univ-card-desc">A leading medical university in Georgia providing excellent clinical exposure and a curriculum aligned with international standards.</p>
+        <div class="univ-card-actions">
+          <button class="btn-univ-apply">Apply Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Uzbekistan Section -->
+  <div class="country-header">
+    <div class="country-title-group">
+      <span class="country-flag">🇺🇿</span>
+      <h3 class="country-name">Uzbekistan</h3>
+    </div>
+    <span class="country-program-badge">MBBS in Uzbekistan</span>
+  </div>
+  <div class="univ-grid grid-3">
+
+    <!-- Uzbekistan University 1 -->
+    <div class="univ-card" data-univ="Tashkent State Medical University">
+      <div class="univ-card-thumb">
+        <span class="univ-program-badge">MBBS in Uzbekistan</span>
+        <img src="assets/tashkent.webp" loading="lazy" decoding="async" alt="Tashkent State Medical University" />
+      </div>
+      <div class="univ-card-body">
+        <h4 class="univ-card-title">Tashkent State Medical University</h4>
+        <div class="univ-meta-grid">
+          <div class="univ-meta-item fee">
+            <span>$3,600/Yr</span>
+          </div>
+        </div>
+        <p class="univ-card-desc">A leading medical university in Central Asia with state-of-the-art research
+          laboratories and low cost of living for Indian students.</p>
+        <div class="univ-card-actions">
+          <button class="btn-univ-apply">Apply Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Uzbekistan University 2 -->
+    <div class="univ-card" data-univ="Fergana Medical Institute of Public Health">
+      <div class="univ-card-thumb">
+        <span class="univ-program-badge">MBBS in Uzbekistan</span>
+        <img src="assets/fergama.webp" loading="lazy" decoding="async"
+          alt="Fergana Medical Institute of Public Health" />
+      </div>
+      <div class="univ-card-body">
+        <h4 class="univ-card-title">Fergana Medical Institute of Public Health</h4>
+        <div class="univ-meta-grid">
+          <div class="univ-meta-item fee">
+            <span>$3,500/Yr</span>
+          </div>
+        </div>
+        <p class="univ-card-desc">A rapidly growing institute focused on modern public health and clinical medicine with
+          excellent facilities for international students.</p>
+        <div class="univ-card-actions">
+          <button class="btn-univ-apply">Apply Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Uzbekistan University 3 -->
+    <div class="univ-card" data-univ="Andijan State Medical Institute">
+      <div class="univ-card-thumb">
+        <span class="univ-program-badge">MBBS in Uzbekistan</span>
+        <img src="assets/Andijan.avif" loading="lazy" decoding="async" alt="Andijan State Medical Institute" />
+      </div>
+      <div class="univ-card-body">
+        <h4 class="univ-card-title">Andijan State Medical Institute</h4>
+        <div class="univ-meta-grid">
+          <div class="univ-meta-item fee">
+            <span>$3,400/Yr</span>
+          </div>
+        </div>
+        <p class="univ-card-desc">Renowned for its dedicated staff, modern labs, and high clinical patient load. Fully
+          aligned with international education guidelines.</p>
+        <div class="univ-card-actions">
+          <button class="btn-univ-apply">Apply Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Kyrgyzstan Section -->
   <div class="country-header">
@@ -2684,9 +2368,8 @@
     <div class="univ-card" data-univ="Kyrgyz-Uzbek University Medical Faculty">
       <div class="univ-card-thumb">
         <span class="univ-program-badge">MBBS in Kyrgyzstan</span>
-        <img src="assets/Kyrgyz-Uzbek%20University%20Medical%20Faculty.jpg" loading="lazy" decoding="async"
+        <img src="assets/Kyrgyz-Uzbek%20University%20Medical%20Faculty.webp" loading="lazy" decoding="async"
           alt="Kyrgyz-Uzbek University Medical Faculty" />
-        <div class="univ-logo-avatar kg">KUU</div>
       </div>
       <div class="univ-card-body">
         <h4 class="univ-card-title">Kyrgyz-Uzbek University Medical Faculty</h4>
@@ -2711,7 +2394,6 @@
         <span class="univ-program-badge">MBBS in Kyrgyzstan</span>
         <img src="assets/kyrgyzstan_univ_facade.webp" loading="lazy" decoding="async"
           alt="Jalal-Abad State University Medical Faculty" />
-        <div class="univ-logo-avatar kg">JASU</div>
       </div>
       <div class="univ-card-body">
         <h4 class="univ-card-title">Jalal-Abad State University Medical Faculty</h4>
@@ -2747,7 +2429,6 @@
         <span class="univ-program-badge">MBBS in Kyrgyzstan</span>
         <img src="assets/kyrgyzstan_univ_facade.webp" loading="lazy" decoding="async"
           alt="Jalal-Abad International University Medical Faculty" />
-        <div class="univ-logo-avatar kg">JAIU</div>
       </div>
       <div class="univ-card-body">
         <h4 class="univ-card-title">Jalal-Abad International University Medical Faculty</h4>
@@ -2781,6 +2462,102 @@
 
 
 
+<!-- Vietnam Section -->
+<div class="country-header">
+  <div class="country-title-group">
+    <span class="country-flag">🇻🇳</span>
+    <h3 class="country-name">Vietnam</h3>
+  </div>
+  <span class="country-program-badge">MBBS in Vietnam</span>
+</div>
+<div class="univ-grid">
+
+  <!-- Vietnam University 1 -->
+  <div class="univ-card" data-univ="Buon Ma Thuot Medical University">
+    <div class="univ-card-thumb">
+      <span class="univ-program-badge">MBBS in Vietnam</span>
+      <img src="assets/Buon%20ma.webp" loading="lazy" decoding="async" alt="Buon Ma Thuot Medical University" />
+    </div>
+    <div class="univ-card-body">
+      <h4 class="univ-card-title">Buon Ma Thuot Medical University</h4>
+      <div class="univ-meta-grid">
+        <div class="univ-meta-item fee">
+          <span>$5,000/Yr</span>
+        </div>
+      </div>
+      <p class="univ-card-desc">A leading medical training center in the Western Highlands of Vietnam, offering
+        state-of-the-art facilities and hands-on clinical training.</p>
+      <div class="univ-card-actions">
+        <button class="btn-univ-apply">Apply Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vietnam University 2 -->
+  <div class="univ-card" data-univ="Dai Nam University Faculty of Medicine">
+    <div class="univ-card-thumb">
+      <span class="univ-program-badge">MBBS in Vietnam</span>
+      <img src="assets/dai%20num.avif" loading="lazy" decoding="async" alt="Dai Nam University Faculty of Medicine" />
+    </div>
+    <div class="univ-card-body">
+      <h4 class="univ-card-title">Dai Nam University Faculty of Medicine</h4>
+      <div class="univ-meta-grid">
+        <div class="univ-meta-item fee">
+          <span>$4,100/Yr</span>
+        </div>
+      </div>
+      <p class="univ-card-desc">Renowned for its modern integrated curriculum, professional labs, and extensive clinical
+        internships in major domestic hospitals.</p>
+      <div class="univ-card-actions">
+        <button class="btn-univ-apply">Apply Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vietnam University 3 -->
+  <div class="univ-card" data-univ="Phan Chau Trinh University">
+    <div class="univ-card-thumb">
+      <span class="univ-program-badge">MBBS in Vietnam</span>
+      <img src="assets/phan%20chaue.webp" loading="lazy" decoding="async" alt="Phan Chau Trinh University" />
+    </div>
+    <div class="univ-card-body">
+      <h4 class="univ-card-title">Phan Chau Trinh University</h4>
+      <div class="univ-meta-grid">
+        <div class="univ-meta-item fee">
+          <span>$5,200/Yr</span>
+        </div>
+      </div>
+      <p class="univ-card-desc">A premier medical university in Quang Nam, focused on advanced clinical simulation
+        training and strong medical research programs.</p>
+      <div class="univ-card-actions">
+        <button class="btn-univ-apply">Apply Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vietnam University 4 -->
+  <div class="univ-card" data-univ="Can Tho University of Medicine and Pharmacy">
+    <div class="univ-card-thumb">
+      <span class="univ-program-badge">MBBS in Vietnam</span>
+      <img src="assets/can%20tho.webp" loading="lazy" decoding="async"
+        alt="Can Tho University of Medicine and Pharmacy" />
+    </div>
+    <div class="univ-card-body">
+      <h4 class="univ-card-title">Can Tho University of Medicine and Pharmacy</h4>
+      <div class="univ-meta-grid">
+        <div class="univ-meta-item fee">
+          <span>$5,000/Yr</span>
+        </div>
+      </div>
+      <p class="univ-card-desc">One of the largest government medical universities in the Mekong Delta, known for high
+        FMGE and clinical success rates.</p>
+      <div class="univ-card-actions">
+        <button class="btn-univ-apply">Apply Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Trusted Partners Section -->
 <section class="partners-section" id="partners">
   <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
@@ -2795,10 +2572,10 @@
     style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto 50px;">
     <!-- Partner Card 1 -->
     <div class="partner-card"
-      style="background: var(--white); border: 1.5px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease; display: flex; flex-direction: column;">
+      style="background: var(--white); border: 1.5px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: none; display: flex; flex-direction: column;">
       <div style="width: 100%; padding-bottom: 100%; position: relative; overflow: hidden; background: #eaeaea;">
         <img src="assets/partner_1.webp" loading="lazy" decoding="async" alt="Official Agreement Handshake"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; "
           class="partner-img" />
       </div>
       <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2817,10 +2594,10 @@
 
     <!-- Partner Card 2 -->
     <div class="partner-card"
-      style="background: var(--white); border: 1.5px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease; display: flex; flex-direction: column;">
+      style="background: var(--white); border: 1.5px solid var(--border); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: none; display: flex; flex-direction: column;">
       <div style="width: 100%; padding-bottom: 100%; position: relative; overflow: hidden; background: #eaeaea;">
         <img src="assets/partner_2.webp" loading="lazy" decoding="async" alt="On-Campus Quality Inspection"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; "
           class="partner-img" />
       </div>
       <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -2846,50 +2623,30 @@
       Our Accreditations & Recognitions</h4>
     <div class="partners-logos"
       style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: center;">
-      <div class="partner-logo-item">
-        <span class="partner-icon">🏛️</span>
-        <span class="partner-name">NMC Compliant</span>
+      <div class="partner-logo-item" style="display: flex; align-items: center; gap: 8px;">
+        <span class="partner-icon" style="display: flex; align-items: center; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
+        </span>
+        <span class="partner-name" style="font-size: 15px; font-weight: 600; color: #1f2937;">NMC Compliant</span>
       </div>
-      <div class="partner-logo-item">
-        <span class="partner-icon">🌐</span>
-        <span class="partner-name">WHO Recognized</span>
+      <div class="partner-logo-item" style="display: flex; align-items: center; gap: 8px;">
+        <span class="partner-icon" style="display: flex; align-items: center; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </span>
+        <span class="partner-name" style="font-size: 15px; font-weight: 600; color: #1f2937;">WHO Recognized</span>
       </div>
-      <div class="partner-logo-item">
-        <span class="partner-icon">🎓</span>
-        <span class="partner-name">ECFMG Certified</span>
+      <div class="partner-logo-item" style="display: flex; align-items: center; gap: 8px;">
+        <span class="partner-icon" style="display: flex; align-items: center; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+        </span>
+        <span class="partner-name" style="font-size: 15px; font-weight: 600; color: #1f2937;">ECFMG Certified</span>
       </div>
-      <div class="partner-logo-item">
-        <span class="partner-icon">🩺</span>
-        <span class="partner-name">Ministry Approved</span>
+      <div class="partner-logo-item" style="display: flex; align-items: center; gap: 8px;">
+        <span class="partner-icon" style="display: flex; align-items: center; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg>
+        </span>
+        <span class="partner-name" style="font-size: 15px; font-weight: 600; color: #1f2937;">Ministry Approved</span>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Media Section -->
-<section class="media-section" id="media-gallery">
-  <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
-    <div class="section-eyebrow">Life & Learning</div>
-    <h2 class="section-title">Experience MBBS Abroad: Campus Life & Seminar Highlights</h2>
-    <p class="section-sub" style="margin-left: auto; margin-right: auto;">Get a real, unfiltered glimpse of campus
-      facilities, student activities, and highlights from our seminars in Tamil Nadu.</p>
-  </div>
-
-  <div class="media-grid">
-
-    <!-- Media 1: Instagram Reel -->
-    <div class="media-card" style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none;">
-      <iframe src="https://www.instagram.com/reel/DZcaWE6JuDW/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;"></iframe>
-    </div>
-
-    <!-- Media 2: Instagram Reel -->
-    <div class="media-card" style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none;">
-      <iframe src="https://www.instagram.com/reel/DZNAlHRJ3mo/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;"></iframe>
-    </div>
-
-    <!-- Media 3: Instagram Reel -->
-    <div class="media-card" style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none;">
-      <iframe src="https://www.instagram.com/reel/DZUyjcEpoUz/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;"></iframe>
     </div>
   </div>
 </section>
@@ -2906,11 +2663,6 @@
         cleared FMGE and navigated the exact same path.</p>
       <div class="why-cta-box">
         <a href="#register" class="btn-primary" style="padding: 12px 28px; font-size: 14px;">Reserve My Seat</a>
-        <div
-          style="display: flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 12px; color: var(--ink-soft);">
-          <span style="color: var(--accent); font-weight: 700;">✓</span> 100% Free Entry
-          <span style="color: var(--orange); font-weight: 700; margin-left: 10px;">✓</span> No Obligation
-        </div>
       </div>
     </div>
 
@@ -2919,7 +2671,9 @@
       <!-- Card 1 -->
       <div class="why-card">
         <div class="why-card-header">
-          <div class="why-icon-box green">🩺</div>
+          <div class="why-icon-box green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg>
+          </div>
           <h3>Real Doctor Speakers</h3>
         </div>
         <p>Every seminar features FMGE-cleared doctors who graduated from universities in Russia, Georgia,
@@ -2929,7 +2683,9 @@
       <!-- Card 2 -->
       <div class="why-card">
         <div class="why-card-header">
-          <div class="why-icon-box orange">🌍</div>
+          <div class="why-icon-box orange">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a00e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
           <h3>Country-by-Country Clarity</h3>
         </div>
         <p>Understand how different countries compare on tuition fees, duration, NMC recognition, hostel safety, and
@@ -2939,7 +2695,9 @@
       <!-- Card 3 -->
       <div class="why-card">
         <div class="why-card-header">
-          <div class="why-icon-box green">📋</div>
+          <div class="why-icon-box green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14h6"></path><path d="M9 18h6"></path><path d="M9 10h.01"></path></svg>
+          </div>
           <h3>NMC & FMGE Roadmap</h3>
         </div>
         <p>Get a clear breakdown of NMC screening norms, FMGE pass patterns, and what universities have the highest
@@ -2949,7 +2707,9 @@
       <!-- Card 4 -->
       <div class="why-card">
         <div class="why-card-header">
-          <div class="why-icon-box orange">💬</div>
+          <div class="why-icon-box orange">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a00e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </div>
           <h3>Open Q&A Session</h3>
         </div>
         <p>Bring any question — about admissions, fees, hostel safety, recognition, or career outcomes. The floor is
@@ -2959,7 +2719,9 @@
       <!-- Card 5 -->
       <div class="why-card">
         <div class="why-card-header">
-          <div class="why-icon-box green">🎓</div>
+          <div class="why-icon-box green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </div>
           <h3>Dedicated Mentorship</h3>
         </div>
         <p>Students who enroll through us get a personal mentor from university selection all the way through FMGE
@@ -2969,7 +2731,9 @@
       <!-- Card 6 -->
       <div class="why-card">
         <div class="why-card-header">
-          <div class="why-icon-box orange">✅</div>
+          <div class="why-icon-box orange">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a00e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
           <h3>Free. No Obligation.</h3>
         </div>
         <p>Entry is completely free. You're not committing to anything by attending. Show up, listen, ask questions,
@@ -3038,7 +2802,7 @@
 <div id="video-modal" class="modal-overlay" onclick="closeVideoModal()">
   <div class="modal-container" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeVideoModal()">×</button>
-    <video id="modal-video-element" controls preload="metadata">
+    <video id="modal-video-element" controls preload="none">
       <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -3053,8 +2817,7 @@
       <h3 id="modal-title-text">Reserve your free seat</h3>
       <p id="modal-subtitle-text">We'll WhatsApp you the venue details and timing.</p>
     </div>
-    <form class="modal-form" id="popup-form"
-      onsubmit="event.preventDefault(); submitRegistration();">
+    <form class="modal-form" id="popup-form" onsubmit="event.preventDefault(); submitRegistration();">
       <input type="hidden" id="modal-univ-name" value="" />
 
       <div class="form-row">
@@ -3114,6 +2877,21 @@
           <option>Other City</option>
         </select>
       </div>
+      <div class="form-row" style="margin-top: 4px;">
+        <label>Study abroad preference</label>
+        <div style="display: flex; gap: 16px; margin-top: 8px;">
+          <label
+            style="display: flex; align-items: center; gap: 6px; font-weight: 500; cursor: pointer; text-transform: none; color: #1f2937;">
+            <input type="radio" name="study_interest" value="Interested" checked style="width: auto; height: auto;">
+            Interested
+          </label>
+          <label
+            style="display: flex; align-items: center; gap: 6px; font-weight: 500; cursor: pointer; text-transform: none; color: #1f2937;">
+            <input type="radio" name="study_interest" value="Not Interested" style="width: auto; height: auto;">
+            Not interested
+          </label>
+        </div>
+      </div>
       <button type="submit" class="btn-reserve">Reserve my free seat ➔</button>
     </form>
   </div>
@@ -3121,54 +2899,6 @@
 
 <!-- Footer -->
 <footer>
-  <!-- Background Doctor Tool Watermarks -->
-  <div class="footer-watermark watermark-1">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-      stroke-linejoin="round">
-      <path d="M4.5 16.5c-1.5-1.5-2.5-3.5-2.5-6a6 6 0 0 1 12 0c0 2.5-1 4.5-2.5 6" />
-      <path d="M10 16.5V19a3 3 0 0 0 6 0v-6.5a2.5 2.5 0 0 1 5 0V15" />
-      <circle cx="21" cy="16" r="1.5" fill="currentColor" />
-      <path d="M6 3v3" />
-      <path d="M10 3v3" />
-      <path d="M5 3h2" />
-      <path d="M9 3h2" />
-    </svg>
-  </div>
-  <div class="footer-watermark watermark-2">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-      stroke-linejoin="round">
-      <path
-        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-      <path d="M3.22 12H7l2-5 3 10 2-7 1.5 2h4.78" />
-    </svg>
-  </div>
-  <div class="footer-watermark watermark-3">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-      stroke-linejoin="round">
-      <rect x="8" y="2" width="8" height="4" rx="1" />
-      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-      <path d="M9 12h6" />
-      <path d="M9 16h6" />
-      <path d="M9 8h4" />
-    </svg>
-  </div>
-  <div class="footer-watermark watermark-4">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-      stroke-linejoin="round">
-      <path d="m18 2 4 4" />
-      <path d="m17 3-3 3" />
-      <path d="M19 5l-3 3" />
-      <path d="m14 8-8.5 8.5" />
-      <path d="m11.5 5.5-9 9" />
-      <path d="m5 19-3 3" />
-      <path d="m19 10.5-9 9" />
-      <path d="M9 14h.01" />
-      <path d="M11 12h.01" />
-      <path d="M13 10h.01" />
-      <path d="M15 8h.01" />
-    </svg>
-  </div>
-
   <div class="footer-inner">
     <div class="footer-brand">
       <a class="nav-logo" href="#"
@@ -3300,14 +3030,15 @@
     const videoModal = document.getElementById('video-modal');
     const videoElement = document.getElementById('modal-video-element');
     if (videoModal && videoElement) {
+      const source = videoElement.querySelector('source[data-src]');
+      if (source && !source.src) { source.src = source.getAttribute('data-src'); videoElement.load(); }
       videoModal.classList.add('active');
       document.body.style.overflow = 'hidden';
       videoElement.currentTime = 0;
-      videoElement.play().catch(err => {
-        console.log('Autoplay was prevented, waiting for user click.');
-      });
+      videoElement.play().catch(err => { console.log('Autoplay prevented'); });
     }
-  }
+  };
+
 
   function closeVideoModal() {
     const videoModal = document.getElementById('video-modal');
@@ -3321,7 +3052,7 @@
     }
   }
 </script>
-  <script src="registration.js"></script>
+<script src="registration.js" defer></script>
 </body>
 
 </html>

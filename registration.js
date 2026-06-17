@@ -1,5 +1,5 @@
 // API endpoint
-const API_URL = 'http://localhost:5000/api/register';
+const API_URL = 'https://api.krmconsultantsmbbs.in/api/register';
 
 // Handle form submission
 async function submitRegistration() {

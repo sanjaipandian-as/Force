@@ -1058,8 +1058,12 @@
       }
 
       .footer-inner {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 28px;
+      }
+      
+      .footer-brand {
+        grid-column: 1 / -1;
       }
 
       .schedule-section {
@@ -1072,6 +1076,23 @@
 
       .cta-banner {
         padding: 45px 5%;
+      }
+
+      .seminar-header-mobile {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .seminar-header-mobile > div:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .seminar-images-mobile {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .seminar-images-mobile > div {
+        height: 130px !important;
       }
     }
 
@@ -1796,10 +1817,10 @@
   <div style="max-width: 1100px; margin: 0 auto; background: var(--white); border-radius: 24px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0, 187, 35, 0.1);">
     
     <!-- Top Header row -->
-    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; flex-wrap: wrap; gap: 24px;">
+    <div class="seminar-header-mobile" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; flex-wrap: wrap; gap: 24px;">
       <div>
         <div style="color: #00bb23; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Previous Seminars</div>
-        <h2 style="font-size: 32px; font-weight: 700; color: var(--ink); margin: 0 0 12px 0;">May 10 – Chennai</h2>
+        <h2 style="font-size: clamp(24px, 6vw, 32px); white-space: nowrap; font-weight: 700; color: var(--ink); margin: 0 0 12px 0;">May 10 – Chennai</h2>
         <div style="display: flex; align-items: center; color: var(--ink-soft); font-size: 16px; gap: 6px;">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           Hotel Hilton
@@ -1813,7 +1834,7 @@
     </div>
 
     <!-- Images row -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+    <div class="seminar-images-mobile" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
       <div style="border-radius: 12px; overflow: hidden; height: 180px;">
         <img src="assets/8K7A3661.webp" loading="lazy" decoding="async" alt="Seminar Image 1" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
       </div>

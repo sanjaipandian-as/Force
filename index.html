@@ -11,6 +11,13 @@
   <meta name="theme-color" content="#00bb23">
   <meta name="robots" content="index, follow, max-image-preview:large">
 
+  <!-- DNS Prefetch & Preconnect for external resources -->
+  <link rel="dns-prefetch" href="https://www.instagram.com">
+  <link rel="preconnect" href="https://www.instagram.com" crossorigin>
+  <link rel="dns-prefetch" href="https://connect.facebook.net">
+  <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+  <link rel="dns-prefetch" href="https://www.facebook.com">
+
   <!-- Preload the critical above-the-fold Hero Background Image -->
   <link rel="preload" href="assets/Hereup.webp" as="image" fetchpriority="high">
 
@@ -980,6 +987,11 @@
       .schedule-header>div {
         width: 100%;
       }
+
+      .hero-image-section img {
+        width: 100% !important;
+        height: auto !important;
+      }
     }
 
     @media(max-width:768px) {
@@ -993,17 +1005,42 @@
       }
 
       nav {
-        height: 70px;
+        height: 64px;
+        padding: 0 4%;
       }
 
       .nav-logo {
         font-size: 16px;
+        display: flex;
+        align-items: center;
+      }
+
+      .krm-logo {
+        height: 46px !important;
+        width: auto;
       }
 
       .nav-cta {
-        padding: 8px 18px;
-        font-size: 12px;
+        padding: 8px 14px;
+        font-size: 11.5px;
+        border-radius: 6px;
       }
+
+      .city-strip {
+        padding: 8px 0;
+      }
+
+      .city-strip-inner span {
+        font-size: 11.5px;
+        margin-right: 28px;
+        gap: 4px;
+      }
+
+      .city-strip-inner span::before {
+        width: 12px;
+        height: 12px;
+      }
+
 
       .hero {
         padding: 70px 5% 80px;
@@ -1758,6 +1795,23 @@
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     }
   </style>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '972807775578692');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 
 
@@ -1788,12 +1842,18 @@
 </nav>
 
 <!-- Hero -->
-<section class="hero-image-section" style="padding: 0; margin: 0; background: #0F1419;">
+<section class="hero-image-section" style="padding: 0; margin: 0; background: #ffffff;">
   <a href="#register" style="display: block; cursor: pointer;">
     <picture>
-      <source srcset="assets/Hereup.webp" type="image/webp"><img src="assets/Hereup.png" alt="MBBS Abroad Seminar"
+      <!-- Mobile View -->
+      <source media="(max-width: 768px)" srcset="assets/Heromb.png" />
+      <!-- Tablet View -->
+      <source media="(max-width: 1024px)" srcset="assets/HEROTB1.png" />
+      <!-- Desktop View -->
+      <source srcset="assets/Hereup.webp" type="image/webp" />
+      <img src="assets/Hereup.png" alt="MBBS Abroad Seminar"
         width="1920" height="auto" fetchpriority="high" decoding="sync"
-        style="width: 100%; height: auto; display: block;" />
+        style="width: 100%; height: 82vh; object-fit: cover; object-position: center; display: block;" />
     </picture>
   </a>
 </section>
@@ -2683,7 +2743,7 @@
     </div>
 
     <!-- Doctors Names Section -->
-    <div style="max-width: 1100px; margin: 0 auto; background: var(--white); border-radius: 20px; padding: 40px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+    <div style="max-width: 1400px; margin: 0 auto; padding: 40px 0; width: 100%;">
       <div style="text-align: center; margin-bottom: 32px;">
         <h3 style="font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 8px;">Meet Our Expert Doctors</h3>
         <p style="font-size: 15px; color: var(--ink-soft);">Meet Our Expert Doctors at the Seminar for Personalized Student Guidance.</p>
@@ -2692,57 +2752,57 @@
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
         
         <!-- Doctor 1 -->
-        <div style="display: flex; align-items: center; gap: 16px; background: #f9fafb; padding: 16px 24px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 330px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
-          <div style="width: 48px; height: 48px; min-width: 48px; background: rgba(0, 187, 35, 0.1); border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; color: #00bb23;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <div style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
+          <div style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <img src="assets/Maruthu%20raj.jpeg" alt="Dr. Maruthi Raja" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
           </div>
           <div style="text-align: left;">
-            <div style="font-size: 15px; font-weight: 700; color: var(--ink);">Dr. Maruthi Raja MBBS.,</div>
-            <div style="font-size: 13px; color: var(--ink-soft); font-weight: 500; margin-top: 2px;">Government doctor<br>FMGE GEORGIA 🇬🇪</div>
+            <div style="font-size: 18px; font-weight: 700; color: var(--ink);">Dr. Maruthi Raja MBBS.,</div>
+            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">Government doctor<br>FMGE GEORGIA 🇬🇪</div>
           </div>
         </div>
 
         <!-- Doctor 2 -->
-        <div style="display: flex; align-items: center; gap: 16px; background: #f9fafb; padding: 16px 24px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 330px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
-          <div style="width: 48px; height: 48px; min-width: 48px; background: rgba(0, 187, 35, 0.1); border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; color: #00bb23;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <div style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
+          <div style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <img src="assets/Shipa.jpeg" alt="DR. Shilpa Anandhan" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
           </div>
           <div style="text-align: left;">
-            <div style="font-size: 15px; font-weight: 700; color: var(--ink);">DR. Shilpa Anandhan MBBS..,</div>
-            <div style="font-size: 13px; color: var(--ink-soft); font-weight: 500; margin-top: 2px;">Government doctor<br>FMGE Moldova 🇲🇩</div>
+            <div style="font-size: 18px; font-weight: 700; color: var(--ink);">DR. Shilpa Anandhan MBBS..,</div>
+            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">Government doctor<br>FMGE Moldova 🇲🇩</div>
           </div>
         </div>
 
         <!-- Doctor 3 -->
-        <div style="display: flex; align-items: center; gap: 16px; background: #f9fafb; padding: 16px 24px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 330px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
-          <div style="width: 48px; height: 48px; min-width: 48px; background: rgba(0, 187, 35, 0.1); border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; color: #00bb23;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <div style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
+          <div style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <img src="assets/Hemanthkumar.jpeg" alt="Dr. Hemanth Kumar" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
           </div>
           <div style="text-align: left;">
-            <div style="font-size: 15px; font-weight: 700; color: var(--ink);">Dr. Hemanth Kumar MBBS..,</div>
-            <div style="font-size: 13px; color: var(--ink-soft); font-weight: 500; margin-top: 2px;">TNMC Registered Doctor<br>FMGE Russia 🇷🇺</div>
+            <div style="font-size: 18px; font-weight: 700; color: var(--ink);">Dr. Hemanth Kumar MBBS..,</div>
+            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">TNMC Registered Doctor<br>FMGE Russia 🇷🇺</div>
           </div>
         </div>
 
         <!-- Doctor 4 -->
-        <div style="display: flex; align-items: center; gap: 16px; background: #f9fafb; padding: 16px 24px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 330px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
-          <div style="width: 48px; height: 48px; min-width: 48px; background: rgba(0, 187, 35, 0.1); border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; color: #00bb23;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <div style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
+          <div style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <img src="assets/Jeyasakthi.jpeg" alt="Dr. JayaSakthi Kumar" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
           </div>
           <div style="text-align: left;">
-            <div style="font-size: 15px; font-weight: 700; color: var(--ink);">Dr. JayaSakthi Kumar MBBS..,</div>
-            <div style="font-size: 13px; color: var(--ink-soft); font-weight: 500; margin-top: 2px;">TNMC Register Doctor<br>FMGE Armenia 🇦🇲</div>
+            <div style="font-size: 18px; font-weight: 700; color: var(--ink);">Dr. JayaSakthi Kumar MBBS..,</div>
+            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">TNMC Register Doctor<br>FMGE Armenia 🇦🇲</div>
           </div>
         </div>
 
         <!-- Doctor 5 -->
-        <div style="display: flex; align-items: center; gap: 16px; background: #f9fafb; padding: 16px 24px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 330px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
-          <div style="width: 48px; height: 48px; min-width: 48px; background: rgba(0, 187, 35, 0.1); border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; color: #00bb23;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <div style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
+          <div style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <img src="assets/Prabhu.jpeg" alt="Dr. Prabhu" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
           </div>
           <div style="text-align: left;">
-            <div style="font-size: 15px; font-weight: 700; color: var(--ink);">Dr. Prabhu MBBS, MS, M.ch (Urology)</div>
-            <div style="font-size: 13px; color: var(--ink-soft); font-weight: 500; margin-top: 2px;">Urologist Madurai Kidney Center</div>
+            <div style="font-size: 18px; font-weight: 700; color: var(--ink);">Dr. Prabhu MBBS, MS, M.ch (Urology)</div>
+            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">Urologist Madurai Kidney Center</div>
           </div>
         </div>
 
@@ -2751,6 +2811,31 @@
   </div>
 </section>
 
+<!-- Instagram Highlights Section -->
+<section class="media-section" id="instagram-gallery" style="padding: 60px 5%; background: var(--white);">
+  <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+    <div style="color: #00bb23; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Campus Life & Seminar Highlights</div>
+    <h2 style="font-size: clamp(28px, 5vw, 38px); font-weight: 800; color: var(--ink); margin: 0 0 16px 0; letter-spacing: -0.8px;">Experience MBBS Abroad: Campus Life & Seminar Highlights</h2>
+    <p style="color: var(--ink-soft); font-size: 16px; line-height: 1.75; margin: 0 auto; max-width: 600px;">Get a real, unfiltered glimpse of campus facilities, student activities, and highlights from our seminars in Tamil Nadu.</p>
+  </div>
+
+  <div class="media-grid">
+    <!-- Media 1: Instagram Reel -->
+    <div class="media-card" style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none; border-radius: 20px; border: 1px solid var(--border);">
+      <iframe src="https://www.instagram.com/reel/DZcaWE6JuDW/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;" loading="lazy"></iframe>
+    </div>
+
+    <!-- Media 2: Instagram Reel -->
+    <div class="media-card" style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none; border-radius: 20px; border: 1px solid var(--border);">
+      <iframe src="https://www.instagram.com/reel/DZNAlHRJ3mo/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;" loading="lazy"></iframe>
+    </div>
+
+    <!-- Media 3: Instagram Reel -->
+    <div class="media-card" style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none; border-radius: 20px; border: 1px solid var(--border);">
+      <iframe src="https://www.instagram.com/reel/DZUyjcEpoUz/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
 
 <!-- Why Attend -->
 <section class="why-section" id="why-attend">

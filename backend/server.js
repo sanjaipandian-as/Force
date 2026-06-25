@@ -40,7 +40,7 @@ const sheets = google.sheets({
 // API endpoint to handle form submission
 app.post('/api/register', async (req, res) => {
   try {
-    const { name, phone, seminarCity, userCity } = req.body;
+    const { name, phone, seminarCity, userCity, studyInterest } = req.body;
 
     // Validate required fields
     if (!name || !phone || !seminarCity || !userCity) {
@@ -53,10 +53,10 @@ app.post('/api/register', async (req, res) => {
     // Append data to Google Sheet
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: SPREADSHEET_ID,
-      range: 'Sheet1!A:E', // Adjust range if needed
+      range: 'Sheet1!A:F', // A=Timestamp, B=Name, C=Phone, D=SeminarCity, E=UserCity, F=StudyInterest
       valueInputOption: 'RAW',
       resource: {
-        values: [[timestamp, name, phone, seminarCity, userCity]]
+        values: [[timestamp, name, phone, seminarCity, userCity, studyInterest || 'Interested']]
       }
     });
 

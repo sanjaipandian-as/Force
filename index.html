@@ -12,17 +12,25 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
 
   <!-- DNS Prefetch & Preconnect for external resources -->
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.instagram.com">
   <link rel="preconnect" href="https://www.instagram.com" crossorigin>
   <link rel="dns-prefetch" href="https://connect.facebook.net">
   <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
   <link rel="dns-prefetch" href="https://www.facebook.com">
 
+  <!-- Font Awesome - loaded async to not block rendering -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </noscript>
+
   <!-- Preload the critical above-the-fold Hero Background Image -->
   <link rel="preload" href="assets/Hereup.webp" as="image" fetchpriority="high">
 
   <style>
-
     *,
     *::before,
     *::after {
@@ -62,8 +70,13 @@
     }
 
     @keyframes scrollLeft {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     /* ── TICKER ── */
@@ -267,35 +280,38 @@
 
     /* ── CITY STRIP ── */
     .city-strip {
+      overflow: hidden;
       background: var(--accent);
       padding: 16px 0;
-      overflow: hidden;
-      white-space: nowrap;
-      font-family: Arial, Helvetica, sans-serif;
+      width: 100%;
     }
 
     .city-strip-inner {
-      display: inline-block;
-      contain: layout style;
-      animation: scrollLeft 30s linear infinite;
-      will-change: transform;
+      display: flex;
+      width: max-content;
+      animation: marquee 20s linear infinite;
     }
 
     .city-strip-inner span {
-      font-weight: 700;
-      font-size: 13.5px;
-      letter-spacing: 0.05em;
-      color: #fff;
-      margin-right: 48px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      margin-right: 30px;
+      color: #fff;
+      white-space: nowrap;
     }
 
-    .city-strip-inner span::before {
-      content: '📍';
-      font-size: 12px;
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
     }
+
+
 
 
     /* ── SECTION COMMON ── */
@@ -1098,7 +1114,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 28px;
       }
-      
+
       .footer-brand {
         grid-column: 1 / -1;
       }
@@ -1120,15 +1136,18 @@
         align-items: center !important;
         text-align: center !important;
       }
-      .seminar-header-mobile > div:first-child {
+
+      .seminar-header-mobile>div:first-child {
         display: flex;
         flex-direction: column;
         align-items: center;
       }
+
       .seminar-images-mobile {
         grid-template-columns: repeat(2, 1fr) !important;
       }
-      .seminar-images-mobile > div {
+
+      .seminar-images-mobile>div {
         height: 130px !important;
       }
     }
@@ -1796,22 +1815,24 @@
     }
   </style>
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '972807775578692');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '972807775578692');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 
 
@@ -1848,11 +1869,11 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
       <!-- Mobile View -->
       <source media="(max-width: 768px)" srcset="assets/Heromb.png" />
       <!-- Tablet View -->
-      <source media="(max-width: 1024px)" srcset="assets/HEROTB1.png" />
+      <source media="(max-width: 1024px)" srcset="assets/Herotb.png" />
       <!-- Desktop View -->
       <source srcset="assets/Hereup.webp" type="image/webp" />
-      <img src="assets/Hereup.png" alt="MBBS Abroad Seminar"
-        width="1920" height="auto" fetchpriority="high" decoding="sync"
+      <img src="assets/Hereup.png" alt="MBBS Abroad Seminar" width="1920" height="auto" fetchpriority="high"
+        decoding="sync"
         style="width: 100%; height: 82vh; object-fit: cover; object-position: center; display: block;" />
     </picture>
   </a>
@@ -1860,52 +1881,77 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
 
 <!-- City strip -->
 <div class="city-strip">
-  <div class="city-strip-inner">
-    <span>Pollachi</span><span>Coimbatore</span><span>Madurai</span><span>Tirunelveli</span>
-    <span>Nagercoil</span><span>Dindigul</span><span>Trichy</span><span>Erode</span>
-    <span>Salem</span><span>Karur</span><span>Tiruvannamalai</span><span>Thiruppur</span>
-    <span>Theni</span><span>Chennai</span>
-    <span>Pollachi</span><span>Coimbatore</span><span>Madurai</span><span>Tirunelveli</span>
-    <span>Nagercoil</span><span>Dindigul</span><span>Trichy</span><span>Erode</span>
-    <span>Salem</span><span>Karur</span><span>Tiruvannamalai</span><span>Thiruppur</span>
-    <span>Theni</span><span>Chennai</span>
+  <div class="city-strip-inner" id="cityStrip">
+    <span><i class="fas fa-location-dot"></i> Pollachi</span>
+    <span><i class="fas fa-location-dot"></i> Coimbatore</span>
+    <span><i class="fas fa-location-dot"></i> Madurai</span>
+    <span><i class="fas fa-location-dot"></i> Tirunelveli</span>
+    <span><i class="fas fa-location-dot"></i> Nagercoil</span>
+    <span><i class="fas fa-location-dot"></i> Dindigul</span>
+    <span><i class="fas fa-location-dot"></i> Trichy</span>
+    <span><i class="fas fa-location-dot"></i> Erode</span>
+    <span><i class="fas fa-location-dot"></i> Salem</span>
+    <span><i class="fas fa-location-dot"></i> Karur</span>
+    <span><i class="fas fa-location-dot"></i> Tiruvannamalai</span>
+    <span><i class="fas fa-location-dot"></i> Tiruppur</span>
+    <span><i class="fas fa-location-dot"></i> Theni</span>
+    <span><i class="fas fa-location-dot"></i> Chennai</span>
   </div>
 </div>
 
+
+
 <!-- Previous Seminars Section -->
 <section class="media-section" id="media-gallery" style="padding: 40px 5%; background: #fafafa;">
-  <div style="max-width: 1100px; margin: 0 auto; background: var(--white); border-radius: 24px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0, 187, 35, 0.1);">
-    
+  <div
+    style="max-width: 1100px; margin: 0 auto; background: var(--white); border-radius: 24px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0, 187, 35, 0.1);">
+
     <!-- Top Header row -->
-    <div class="seminar-header-mobile" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; flex-wrap: wrap; gap: 24px;">
+    <div class="seminar-header-mobile"
+      style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; flex-wrap: wrap; gap: 24px;">
       <div>
-        <div style="color: #00bb23; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Previous Seminars</div>
-        <h2 style="font-size: clamp(24px, 6vw, 32px); white-space: nowrap; font-weight: 700; color: var(--ink); margin: 0 0 12px 0;">May 10 – Chennai</h2>
+        <div
+          style="color: #00bb23; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">
+          Previous Seminars</div>
+        <h2
+          style="font-size: clamp(24px, 6vw, 32px); white-space: nowrap; font-weight: 700; color: var(--ink); margin: 0 0 12px 0;">
+          May 10 – Chennai</h2>
         <div style="display: flex; align-items: center; color: var(--ink-soft); font-size: 16px; gap: 6px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
           Hotel Hilton
         </div>
       </div>
-      
-      <div style="background: rgba(0, 187, 35, 0.06); border: 1px solid rgba(0, 187, 35, 0.15); border-radius: 16px; padding: 20px 40px; text-align: center;">
+
+      <div
+        style="background: rgba(0, 187, 35, 0.06); border: 1px solid rgba(0, 187, 35, 0.15); border-radius: 16px; padding: 20px 40px; text-align: center;">
         <div style="font-size: 48px; font-weight: 800; color: #00bb23; line-height: 1;">263</div>
-        <div style="font-size: 13px; font-weight: 700; color: #555; letter-spacing: 0.05em; margin-top: 8px;">STUDENTS ATTENDED</div>
+        <div style="font-size: 13px; font-weight: 700; color: #555; letter-spacing: 0.05em; margin-top: 8px;">STUDENTS
+          ATTENDED</div>
       </div>
     </div>
 
     <!-- Images row -->
-    <div class="seminar-images-mobile" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+    <div class="seminar-images-mobile"
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
       <div style="border-radius: 12px; overflow: hidden; height: 180px;">
-        <img src="assets/8K7A3661.webp" loading="lazy" decoding="async" alt="Seminar Image 1" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <img src="assets/8K7A3661.webp" loading="lazy" decoding="async" alt="Seminar Image 1"
+          style="width: 100%; height: 100%; object-fit: cover; display: block;" />
       </div>
       <div style="border-radius: 12px; overflow: hidden; height: 180px;">
-        <img src="assets/DSC04685.webp" loading="lazy" decoding="async" alt="Seminar Image 2" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <img src="assets/DSC04685.webp" loading="lazy" decoding="async" alt="Seminar Image 2"
+          style="width: 100%; height: 100%; object-fit: cover; display: block;" />
       </div>
       <div style="border-radius: 12px; overflow: hidden; height: 180px;">
-        <img src="assets/DSC04551.webp" loading="lazy" decoding="async" alt="Seminar Image 3" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <img src="assets/DSC04551.webp" loading="lazy" decoding="async" alt="Seminar Image 3"
+          style="width: 100%; height: 100%; object-fit: cover; display: block;" />
       </div>
       <div style="border-radius: 12px; overflow: hidden; height: 180px;">
-        <img src="assets/DSC04762.webp" loading="lazy" decoding="async" alt="Seminar Image 4" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <img src="assets/DSC04762.webp" loading="lazy" decoding="async" alt="Seminar Image 4"
+          style="width: 100%; height: 100%; object-fit: cover; display: block;" />
       </div>
     </div>
   </div>
@@ -2353,7 +2399,8 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
             <span>$5,900/Yr</span>
           </div>
         </div>
-        <p class="univ-card-desc">A leading medical university in Georgia providing excellent clinical exposure and a curriculum aligned with international standards.</p>
+        <p class="univ-card-desc">A leading medical university in Georgia providing excellent clinical exposure and a
+          curriculum aligned with international standards.</p>
         <div class="univ-card-actions">
           <button class="btn-univ-apply">Apply Now</button>
         </div>
@@ -2699,110 +2746,194 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
   <!-- Accreditations & Doctors Section -->
   <div style="margin-top: 60px;">
     <div style="max-width: 1100px; margin: 0 auto; text-align: center; margin-bottom: 40px;">
-      <h2 style="font-size: 32px; font-weight: 800; color: var(--ink); margin-bottom: 12px; line-height: 1.2;">Our Accreditations & Recognitions</h2>
-      <p style="font-size: 16px; color: var(--ink-soft); max-width: 600px; margin: 0 auto;">Approved by global health and education organizations to ensure your degree is valid worldwide.</p>
+      <h2 style="font-size: 32px; font-weight: 800; color: var(--ink); margin-bottom: 12px; line-height: 1.2;">Our
+        Accreditations & Recognitions</h2>
+      <p style="font-size: 16px; color: var(--ink-soft); max-width: 600px; margin: 0 auto;">Approved by global health
+        and education organizations to ensure your degree is valid worldwide.</p>
     </div>
 
     <!-- Accreditations Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto 50px;">
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto 50px;">
       <!-- Card 1 -->
-      <div style="background: var(--white); border-radius: 20px; padding: 32px 24px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)'">
-        <div style="width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(0, 187, 35, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #00bb23;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
+      <div
+        style="background: var(--white); border-radius: 20px; padding: 32px 24px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center; transition: all 0.3s ease;"
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.06)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)'">
+        <div
+          style="width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(0, 187, 35, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #00bb23;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+            <path d="M9 22v-4h6v4"></path>
+            <path d="M8 6h.01"></path>
+            <path d="M16 6h.01"></path>
+            <path d="M12 6h.01"></path>
+            <path d="M12 10h.01"></path>
+            <path d="M12 14h.01"></path>
+            <path d="M16 10h.01"></path>
+            <path d="M16 14h.01"></path>
+            <path d="M8 10h.01"></path>
+            <path d="M8 14h.01"></path>
+          </svg>
         </div>
         <h3 style="font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 8px;">NMC Compliant</h3>
-        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Fully aligned with National Medical Commission guidelines for Indian students.</p>
+        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Fully aligned with National Medical
+          Commission guidelines for Indian students.</p>
       </div>
 
       <!-- Card 2 -->
-      <div style="background: var(--white); border-radius: 20px; padding: 32px 24px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)'">
-        <div style="width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(0, 187, 35, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #00bb23;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      <div
+        style="background: var(--white); border-radius: 20px; padding: 32px 24px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center; transition: all 0.3s ease;"
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.06)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)'">
+        <div
+          style="width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(0, 187, 35, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #00bb23;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
         </div>
         <h3 style="font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 8px;">WHO Recognized</h3>
-        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Listed in the World Directory of Medical Schools by WHO.</p>
+        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Listed in the World Directory of Medical
+          Schools by WHO.</p>
       </div>
 
       <!-- Card 3 -->
-      <div style="background: var(--white); border-radius: 20px; padding: 32px 24px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)'">
-        <div style="width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(0, 187, 35, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #00bb23;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+      <div
+        style="background: var(--white); border-radius: 20px; padding: 32px 24px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center; transition: all 0.3s ease;"
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.06)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)'">
+        <div
+          style="width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(0, 187, 35, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #00bb23;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
         </div>
         <h3 style="font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 8px;">ECFMG Certified</h3>
-        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Eligible for USMLE and valid for medical practice globally.</p>
+        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Eligible for USMLE and valid for medical
+          practice globally.</p>
       </div>
 
       <!-- Card 4 -->
-      <div style="background: var(--white); border-radius: 20px; padding: 32px 24px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)'">
-        <div style="width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(0, 187, 35, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #00bb23;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg>
+      <div
+        style="background: var(--white); border-radius: 20px; padding: 32px 24px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center; transition: all 0.3s ease;"
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.06)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)'">
+        <div
+          style="width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(0, 187, 35, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #00bb23;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3">
+            </path>
+            <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path>
+            <circle cx="20" cy="10" r="2"></circle>
+          </svg>
         </div>
         <h3 style="font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 8px;">Ministry Approved</h3>
-        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Approved by the respective country's Ministry of Education and Health.</p>
+        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Approved by the respective country's
+          Ministry of Education and Health.</p>
       </div>
     </div>
 
     <!-- Doctors Names Section -->
     <div style="max-width: 1400px; margin: 0 auto; padding: 40px 0; width: 100%;">
       <div style="text-align: center; margin-bottom: 32px;">
-        <h3 style="font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 8px;">Meet Our Expert Doctors</h3>
-        <p style="font-size: 15px; color: var(--ink-soft);">Meet Our Expert Doctors at the Seminar for Personalized Student Guidance.</p>
+        <h3 style="font-size: 24px; font-weight: 800; color: var(--ink); margin-bottom: 8px;">Meet Our Expert Doctors
+        </h3>
+        <p style="font-size: 15px; color: var(--ink-soft);">Meet Our Expert Doctors at the Seminar for Personalized
+          Student Guidance.</p>
       </div>
-      
+
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-        
+
         <!-- Doctor 1 -->
-        <div style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
-          <div style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-            <img src="assets/Maruthu%20raj.jpeg" alt="Dr. Maruthi Raja" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+        <div
+          style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;"
+          onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'"
+          onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
+          <div
+            style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <img src="assets/Maruthu%20raj.jpeg" alt="Dr. Maruthi Raja"
+              style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
           </div>
           <div style="text-align: left;">
             <div style="font-size: 18px; font-weight: 700; color: var(--ink);">Dr. Maruthi Raja MBBS.,</div>
-            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">Government doctor<br>FMGE GEORGIA 🇬🇪</div>
+            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">Government
+              doctor<br>FMGE GEORGIA 🇬🇪</div>
           </div>
         </div>
 
         <!-- Doctor 2 -->
-        <div style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
-          <div style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-            <img src="assets/Shipa.jpeg" alt="DR. Shilpa Anandhan" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+        <div
+          style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;"
+          onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'"
+          onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
+          <div
+            style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <img src="assets/Shipa.jpeg" alt="DR. Shilpa Anandhan" style="width: 100%; height: 100%; object-fit: cover;"
+              loading="lazy" decoding="async">
           </div>
           <div style="text-align: left;">
             <div style="font-size: 18px; font-weight: 700; color: var(--ink);">DR. Shilpa Anandhan MBBS..,</div>
-            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">Government doctor<br>FMGE Moldova 🇲🇩</div>
+            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">Government
+              doctor<br>FMGE Moldova 🇲🇩</div>
           </div>
         </div>
 
         <!-- Doctor 3 -->
-        <div style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
-          <div style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-            <img src="assets/Hemanthkumar.jpeg" alt="Dr. Hemanth Kumar" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+        <div
+          style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;"
+          onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'"
+          onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
+          <div
+            style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <img src="assets/Hemanthkumar.jpeg" alt="Dr. Hemanth Kumar"
+              style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
           </div>
           <div style="text-align: left;">
             <div style="font-size: 18px; font-weight: 700; color: var(--ink);">Dr. Hemanth Kumar MBBS..,</div>
-            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">TNMC Registered Doctor<br>FMGE Russia 🇷🇺</div>
+            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">TNMC Registered
+              Doctor<br>FMGE Russia 🇷🇺</div>
           </div>
         </div>
 
         <!-- Doctor 4 -->
-        <div style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
-          <div style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-            <img src="assets/Jeyasakthi.jpeg" alt="Dr. JayaSakthi Kumar" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+        <div
+          style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;"
+          onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'"
+          onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
+          <div
+            style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <img src="assets/Jeyasakthi.jpeg" alt="Dr. JayaSakthi Kumar"
+              style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
           </div>
           <div style="text-align: left;">
             <div style="font-size: 18px; font-weight: 700; color: var(--ink);">Dr. JayaSakthi Kumar MBBS..,</div>
-            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">TNMC Register Doctor<br>FMGE Armenia 🇦🇲</div>
+            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">TNMC Register
+              Doctor<br>FMGE Armenia 🇦🇲</div>
           </div>
         </div>
 
         <!-- Doctor 5 -->
-        <div style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;" onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'" onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
-          <div style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-            <img src="assets/Prabhu.jpeg" alt="Dr. Prabhu" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" decoding="async">
+        <div
+          style="display: flex; align-items: center; gap: 24px; background: #f9fafb; padding: 24px 32px; border-radius: 20px; border: 1px solid var(--border); transition: all 0.3s ease; width: 100%; max-width: 420px;"
+          onmouseover="this.style.background='#f3f4f6'; this.style.borderColor='#d1d5db'"
+          onmouseout="this.style.background='#f9fafb'; this.style.borderColor='var(--border)'">
+          <div
+            style="width: 140px; height: 140px; min-width: 140px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+            <img src="assets/Prabhu.jpeg" alt="Dr. Prabhu" style="width: 100%; height: 100%; object-fit: cover;"
+              loading="lazy" decoding="async">
           </div>
           <div style="text-align: left;">
             <div style="font-size: 18px; font-weight: 700; color: var(--ink);">Dr. Prabhu MBBS, MS, M.ch (Urology)</div>
-            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">Urologist Madurai Kidney Center</div>
+            <div style="font-size: 15px; color: var(--ink-soft); font-weight: 500; margin-top: 6px;">Urologist Madurai
+              Kidney Center</div>
           </div>
         </div>
 
@@ -2814,28 +2945,40 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
 <!-- Instagram Highlights Section -->
 <section class="media-section" id="instagram-gallery" style="padding: 60px 5%; background: var(--white);">
   <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
-    <div style="color: #00bb23; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Campus Life & Seminar Highlights</div>
-    <h2 style="font-size: clamp(28px, 5vw, 38px); font-weight: 800; color: var(--ink); margin: 0 0 16px 0; letter-spacing: -0.8px;">Experience MBBS Abroad: Campus Life & Seminar Highlights</h2>
-    <p style="color: var(--ink-soft); font-size: 16px; line-height: 1.75; margin: 0 auto; max-width: 600px;">Get a real, unfiltered glimpse of campus facilities, student activities, and highlights from our seminars in Tamil Nadu.</p>
+    <div
+      style="color: #00bb23; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">
+      Campus Life & Seminar Highlights</div>
+    <h2
+      style="font-size: clamp(28px, 5vw, 38px); font-weight: 800; color: var(--ink); margin: 0 0 16px 0; letter-spacing: -0.8px;">
+      Experience MBBS Abroad: Campus Life & Seminar Highlights</h2>
+    <p style="color: var(--ink-soft); font-size: 16px; line-height: 1.75; margin: 0 auto; max-width: 600px;">Get a real,
+      unfiltered glimpse of campus facilities, student activities, and highlights from our seminars in Tamil Nadu.</p>
   </div>
 
   <div class="media-grid">
     <!-- Media 1: Instagram Reel -->
-    <div class="media-card" style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none; border-radius: 20px; border: 1px solid var(--border);">
-      <iframe src="https://www.instagram.com/reel/DZcaWE6JuDW/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;" loading="lazy"></iframe>
+    <div class="media-card"
+      style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none; border-radius: 20px; border: 1px solid var(--border);">
+      <iframe data-src="https://www.instagram.com/reel/DZcaWE6JuDW/embed" width="100%" height="100%" frameborder="0"
+        scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;" loading="lazy"></iframe>
     </div>
 
     <!-- Media 2: Instagram Reel -->
-    <div class="media-card" style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none; border-radius: 20px; border: 1px solid var(--border);">
-      <iframe src="https://www.instagram.com/reel/DZNAlHRJ3mo/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;" loading="lazy"></iframe>
+    <div class="media-card"
+      style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none; border-radius: 20px; border: 1px solid var(--border);">
+      <iframe data-src="https://www.instagram.com/reel/DZNAlHRJ3mo/embed" width="100%" height="100%" frameborder="0"
+        scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;" loading="lazy"></iframe>
     </div>
 
     <!-- Media 3: Instagram Reel -->
-    <div class="media-card" style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none; border-radius: 20px; border: 1px solid var(--border);">
-      <iframe src="https://www.instagram.com/reel/DZUyjcEpoUz/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;" loading="lazy"></iframe>
+    <div class="media-card"
+      style="padding: 0; overflow: hidden; background: #fafafa; display: flex; justify-content: center; min-height: 520px; box-shadow: none; border-radius: 20px; border: 1px solid var(--border);">
+      <iframe data-src="https://www.instagram.com/reel/DZUyjcEpoUz/embed" width="100%" height="100%" frameborder="0"
+        scrolling="no" allowtransparency="true" style="border:none; width:100%; height:100%;" loading="lazy"></iframe>
     </div>
   </div>
 </section>
+
 
 <!-- Why Attend -->
 <section class="why-section" id="why-attend">
@@ -2857,7 +3000,14 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
       <div class="why-card">
         <div class="why-card-header">
           <div class="why-icon-box green">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path><circle cx="20" cy="10" r="2"></circle></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3">
+              </path>
+              <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path>
+              <circle cx="20" cy="10" r="2"></circle>
+            </svg>
           </div>
           <h3>Real Doctor Speakers</h3>
         </div>
@@ -2869,7 +3019,13 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
       <div class="why-card">
         <div class="why-card-header">
           <div class="why-icon-box orange">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a00e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#f5a00e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
           </div>
           <h3>Country-by-Country Clarity</h3>
         </div>
@@ -2881,7 +3037,14 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
       <div class="why-card">
         <div class="why-card-header">
           <div class="why-icon-box green">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14h6"></path><path d="M9 18h6"></path><path d="M9 10h.01"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+              <path d="M9 14h6"></path>
+              <path d="M9 18h6"></path>
+              <path d="M9 10h.01"></path>
+            </svg>
           </div>
           <h3>NMC & FMGE Roadmap</h3>
         </div>
@@ -2893,7 +3056,12 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
       <div class="why-card">
         <div class="why-card-header">
           <div class="why-icon-box orange">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a00e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#f5a00e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+              </path>
+            </svg>
           </div>
           <h3>Open Q&A Session</h3>
         </div>
@@ -2905,7 +3073,11 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
       <div class="why-card">
         <div class="why-card-header">
           <div class="why-icon-box green">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#00bb23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
           </div>
           <h3>Dedicated Mentorship</h3>
         </div>
@@ -2917,7 +3089,11 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
       <div class="why-card">
         <div class="why-card-header">
           <div class="why-icon-box orange">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5a00e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#f5a00e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
           </div>
           <h3>Free. No Obligation.</h3>
         </div>
@@ -3122,7 +3298,10 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
     </div>
   </div>
 </footer>
-
+<script>
+  const strip = document.getElementById('cityStrip');
+  strip.innerHTML += strip.innerHTML;
+</script>
 <script>
   // Modal Functionality
   const modal = document.getElementById('register-modal');
@@ -3236,6 +3415,83 @@ src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1"
       videoElement.pause();
     }
   }
+</script>
+<style>
+  .mobile-sticky-footer {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid var(--border);
+    padding: 10px 5%;
+    z-index: 999;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .msf-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+
+  .msf-btn {
+    padding: 10px 24px;
+    font-size: 13.5px;
+    border-radius: 8px;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-sticky-footer {
+      display: flex;
+    }
+
+    body {
+      padding-bottom: 64px;
+    }
+  }
+</style>
+
+<!-- Mobile Sticky Footer -->
+<div class="mobile-sticky-footer">
+  <div class="msf-brand">
+    <img src="assets/Krm.svg" alt="KRM Logo" width="24" height="24">
+    <span>KRM Consultants</span>
+  </div>
+  <a href="#register" class="btn-primary msf-btn">Register</a>
+</div>
+
+<script>
+  // Lazy-load Instagram iframes using IntersectionObserver
+  (function () {
+    var iframes = document.querySelectorAll('iframe[data-src]');
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var iframe = entry.target;
+            iframe.src = iframe.getAttribute('data-src');
+            iframe.removeAttribute('data-src');
+            observer.unobserve(iframe);
+          }
+        });
+      }, { rootMargin: '200px' });
+      iframes.forEach(function (iframe) { observer.observe(iframe); });
+    } else {
+      // Fallback: load all iframes immediately
+      iframes.forEach(function (iframe) {
+        iframe.src = iframe.getAttribute('data-src');
+        iframe.removeAttribute('data-src');
+      });
+    }
+  })();
 </script>
 <script src="registration.js" defer></script>
 </body>

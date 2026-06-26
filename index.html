@@ -1816,40 +1816,42 @@
   </style>
   <!-- Meta Pixel Code -->
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
+    function loadFacebookPixel() {
+      if (window.fbPixelLoaded) return;
+      window.fbPixelLoaded = true;
+      
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '972807775578692');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none" alt=""
-      src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1" /></noscript>
-  <!-- End Meta Pixel Code -->
+      
+      fbq('init', '972807775578692');
+      fbq('init', '1569659538211073');
+      fbq('track', 'PageView');
+    }
 
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1569659538211073');
-  fbq('track', 'PageView');
+    var fbTriggerEvents = ['click', 'mousedown', 'mousemove', 'scroll', 'touchstart', 'keydown'];
+    function triggerFB() {
+      loadFacebookPixel();
+      fbTriggerEvents.forEach(function(e) {
+        window.removeEventListener(e, triggerFB, { passive: true });
+      });
+    }
+
+    fbTriggerEvents.forEach(function(e) {
+      window.addEventListener(e, triggerFB, { passive: true });
+    });
+
+    setTimeout(loadFacebookPixel, 3000);
   </script>
-  <noscript><img height="1" width="1" style="display:none" alt=""
-  src="https://www.facebook.com/tr?id=1569659538211073&ev=PageView&noscript=1"
-  /></noscript>
+  <noscript>
+    <img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=972807775578692&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1569659538211073&ev=PageView&noscript=1" />
+  </noscript>
   <!-- End Meta Pixel Code -->
 </head>
 
@@ -3491,29 +3493,31 @@
 </div>
 
 <script>
-  // Lazy-load Instagram iframes using IntersectionObserver
-  (function () {
+  // Deferred lazy-load Instagram iframes on user interaction or timeout
+  function loadInstagramIframes() {
+    if (window.instagramLoaded) return;
+    window.instagramLoaded = true;
+    
     var iframes = document.querySelectorAll('iframe[data-src]');
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var iframe = entry.target;
-            iframe.src = iframe.getAttribute('data-src');
-            iframe.removeAttribute('data-src');
-            observer.unobserve(iframe);
-          }
-        });
-      }, { rootMargin: '200px' });
-      iframes.forEach(function (iframe) { observer.observe(iframe); });
-    } else {
-      // Fallback: load all iframes immediately
-      iframes.forEach(function (iframe) {
-        iframe.src = iframe.getAttribute('data-src');
-        iframe.removeAttribute('data-src');
-      });
-    }
-  })();
+    iframes.forEach(function (iframe) {
+      iframe.src = iframe.getAttribute('data-src');
+      iframe.removeAttribute('data-src');
+    });
+  }
+
+  var igTriggerEvents = ['click', 'mousedown', 'mousemove', 'scroll', 'touchstart', 'keydown'];
+  function triggerInstagram() {
+    loadInstagramIframes();
+    igTriggerEvents.forEach(function(e) {
+      window.removeEventListener(e, triggerInstagram, { passive: true });
+    });
+  }
+
+  igTriggerEvents.forEach(function(e) {
+    window.addEventListener(e, triggerInstagram, { passive: true });
+  });
+  
+  setTimeout(loadInstagramIframes, 3500);
 </script>
 <script src="registration.js" defer></script>
 </body>
